@@ -7,11 +7,41 @@ public class ScannerReader {
 
     // Aqui ejemplo de como uso el metodo del mensaje de pedir nombre y en esta
     // clase Scanner lee el nombre ingresado por teclado
+    ////////////////////////////////////////////////////////////////////////
+    //Clients
+    public static int readUpdateClient(){
+        Messages.updateClientOptions();
+        return SC.nextInt();
+    }
+    
     public static String readName() {
         Messages.requestName();
         return SC.nextLine();
     }
 
+    public static String readLastName(){
+        Messages.requestSurname();
+        return SC.nextLine();
+    }
+
+    public static String readEmail(){
+        Messages.requestEmail();
+        return SC.nextLine();
+    }
+
+    public static String readAddress(){
+        Messages.requestAddress();
+        return SC.nextLine();
+    }
+
+    public static String readPhoneNumber(){
+        Messages.requestPhone();
+        return SC.nextLine();
+    }
+    //////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////
+    //////////Products
     public static int readUpdateProductOption() {
         Messages.updateProductOptions();
         return SC.nextInt();
@@ -26,4 +56,6 @@ public class ScannerReader {
         Messages.requestProductPriceByUnit();
         return SC.nextDouble();
     }
+    ///////////////////////////////////
+    
 }

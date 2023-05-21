@@ -20,6 +20,9 @@ public class Messages {
     System.out.print("1.Registar Cliente \n 2.Modificar Cliente \n4.Borrar Cliente \nIngresa tu opcion: ");
     }
 
+    public static void updateClientOptions() {
+        System.out.print("1.Nombres \n2.Apellidos \n3.Dirección \n4.Correo Electrónico \n5.Telefono \nIngresa tu opcion: ");
+    }
     //sirve para pedir el nombre
     public static void requestName() {
         System.out.print("Ingresa tu nombre por favor:  ");

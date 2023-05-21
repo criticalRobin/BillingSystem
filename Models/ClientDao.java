@@ -26,11 +26,11 @@ public class ClientDao {
                     switch (option) {
                         case 1:
                             String newName = ScannerReader.readProductName();
-                            pro.setName(newName);
+                            client.setNames(newName);
                             break;
                         case 2:
                             double newPrice = ScannerReader.readProductPriceByUnit();
-                            pro.setPriceByUnit(newPrice);
+                            client.setEmail(String.valueOf(newPrice));
                             break;
                         default:
                             Messages.switchDefaultMessage();
