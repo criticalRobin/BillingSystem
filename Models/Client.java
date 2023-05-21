@@ -8,6 +8,17 @@ public class Client {
     private String phoneNumber;
     private String email;
 
+    
+
+    public Client(String fullname, String id, String typeId, String address, String phoneNumber, String email) {
+        this.fullname = fullname;
+        this.id = id;
+        this.typeId = typeId;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+    
     public String getFullname() {
         return fullname;
     }
