@@ -7,11 +7,11 @@ import Complements.ScannerReader;
 import Complements.Validations;
 
 public class ClientDao {
-    List<Client> clients = new LinkedList<>();
+    static List<Client> clients = new LinkedList<>();
    
     
     //inserta a un cliente a la lista
-    public boolean insertClient(String names, String lastnames, String id, int typeId, String address,
+    public static boolean insertClient(String names, String lastnames, String id, int typeId, String address,
             String phoneNumber, String email) {
         try {
             clients.add(new Client(names, lastnames, id, typeId, address, phoneNumber, email));
@@ -22,7 +22,7 @@ public class ClientDao {
         return false;
     }
 
-    public boolean updateClient(String id) {
+    public static boolean updateClient(String id) {
         try {
             for (Client client : clients) {
                 if (client.getId().equals(id)) {    
@@ -83,7 +83,7 @@ public class ClientDao {
         }
     }
 
-    public boolean deleteClient(String id) {
+    public static boolean deleteClient(String id) {
         try {
             for (Client client : clients) {
                 if (client.getId().equals(id)) {
