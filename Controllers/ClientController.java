@@ -6,26 +6,42 @@ import Complements.Validations;
 import Models.ClientDao;
 
 public class ClientController {
-    
-    public boolean addClientController(){
-        int typeId = ScannerReader.readTypeID();
-        if (!Validations.validateIDType(String.valueOf(typeId))){
-            Messages.wrongTypeID();
-            return false;
-        }
-        String name = ScannerReader.readName();
-        if (!Validations.validateName(name))
-            return false;
-        String Lastname = ScannerReader.readLastName();
+
+    public boolean addClientController() {
+        boolean result = true;
+        int typeId;
+        String name;
+        String Lastname;
+        String email;
+        String address;
+        String phone;
+        do {
+            typeId = ScannerReader.readTypeID();
+            if (!Validations.validateIDType(String.valueOf(typeId))) {
+                Messages.wrongTypeID();
+                result = false;
+            }else
+                result = true;
+        } while (!result);
+
+        do {
+            name = ScannerReader.readName();
+            if (!Validations.validateName(name)) {
+                Messages.wrongName();
+                result = false;
+            }else
+                result = true;
+        } while (!result);
+        Lastname = ScannerReader.readLastName();
         if (!Validations.validateLastName(Lastname))
             return false;
-        String email = ScannerReader.readEmail();
+        email = ScannerReader.readEmail();
         if (!Validations.validateEmail(email))
             return false;
-        String address = ScannerReader.readAddress();
+        address = ScannerReader.readAddress();
         if (!Validations.validateAddress(address))
             return false;
-        String phone = ScannerReader.readPhoneNumber();
+        phone = ScannerReader.readPhoneNumber();
         if (!Validations.validatePhoneNumber(phone))
             return false;
         ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
