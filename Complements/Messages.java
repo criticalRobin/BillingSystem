@@ -1,5 +1,7 @@
 package Complements;
 
+import javax.management.ValueExp;
+
 public class Messages {
 
     /////////////////////////////////////////////////
@@ -79,52 +81,120 @@ public class Messages {
         System.out.println("Desea continuar con la modificación S/N");
     }
 
-    /////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+    ///////////////////////////////////////////////////////////
     // Errores
     // mensaje general de error
     public static void errorMessage() {
         System.out.println("Ups algo ha salido mal!");
     }
 
+    // Eligir alguna opcion que no es dentro de un switch
     public static void switchDefaultMessage() {
         System.out.println("La opcion ingresada no es valida");
     }
 
+    //Nombre
     public static void wrongName() {
         System.out.println("El nombre no es valido");
     }
 
+    //Apellido
     public static void wrongLastName() {
         System.out.println("El Apellido no es valido");
     }
 
+    //Direccion
     public static void wrongAddress() {
         System.out.println("La dirección no es valido");
     }
 
+    //Correo
     public static void wrongEmail() {
         System.out.println("El correo electrónico no es valido");
     }
 
+    //Telefono
     public static void wrongPhone() {
         System.out.println("El numero de contacto no es valido");
     }
 
-    public static void wrongId() {
-        System.out.println("El numero de cedula es incorrecto");
+    //Cedula 
+    public static void wrongID() {
+        System.out.println("Cedula no es valido");
     }
 
-    public static void numberwrongId() {
-        System.out.println("El numero del Id es incorrecto");
+    public static void wrongRangeID() {
+        System.out.println("Cedula fuera rango");
     }
 
+    public static void noNumbersID() {
+        System.out.println("Id solo acepta numeros");
+    }
+
+    public static void wrongTypeID() {
+        System.out.println("El tipo de Id no es valido");
+    }
+
+    //RUC
     public static void wrongRUC() {
-        System.out.println("El numero de RUC es incorrecto");
+        System.out.println("RUC no es valido");
     }
 
-    public static void numberwrongRUC() {
-        System.out.println("El numero del RUC es incorrecto");
+    public static void noNumbersRUC() {
+        System.out.println("RUC solo acepta numeros");
     }
+
+    public static void characterErrorRUC() {
+        System.out.println("RUC solo acepta numeros");
+    }
+
+    public static void wrongIdProduct() {
+        System.out.println("Id producto incorrecto");
+    }
+
+    //producto
+    public static void wrongNameProduct() {
+        System.out.println("Nombre del producto no valido");
+    }
+
+    public static void wrongPriceProduct() {
+        System.out.println("Precio del producto no valido");
+    }
+
+    public static void wrongIDProduct() {
+        System.out.println("ID del producto no valido");
+    }
+
+    //Servicio
+    public static void wrongNameService() {
+        System.out.println("Nombre del servicio no valido");
+    }
+
+    public static void wrongPriceService() {
+        System.out.println("Precio del servicio no valido");
+    }
+
+    public static void wrongIDService() {
+        System.out.println("ID del servicio no valido");
+    }
+
+
+
+
+
+
+
+
+
+
 
     /////////////////////////////////////////////////
     // Productos
@@ -162,8 +232,6 @@ public class Messages {
     public static void IVAproduct() {
         System.out.print("ingrese el IVA del product: ");
     }
-    /////////////////////////////////////////////////
-    // Extras
 
     /////////////////////////////////////////////////
     // Servicios
