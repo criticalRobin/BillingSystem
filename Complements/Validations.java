@@ -5,6 +5,7 @@ public class Validations {
     public static boolean validateIDType(String idType) {
         if (!idType.matches("^[12]$")) {
             // mensaje de ID no es valido
+            Messages.wrongTypeID();
             return false;
         }
         return true;
@@ -13,14 +14,17 @@ public class Validations {
     public static boolean validateID(String cedula) {
         if (cedula.equals(null) || cedula.equals("")) {
             // mensaje de vacio
+            Messages.messageEmptyID();
             return false;
         }
         if (!cedula.matches("\\d+")) {
             // mensaje de no son numeros
+            Messages.noNumbersID();
             return false;
         }
         if (cedula.length() < 10 || cedula.length() > 10) {
             // mensaje de cedula no valida por rango
+            Messages.wrongRangeID();
             return false;
         }
 
@@ -45,24 +49,29 @@ public class Validations {
             }
         } catch (NumberFormatException e) {
             // mensaje de error
+            Messages.errorMessage();
             return false;
         }
         // cedula no valida
+        Messages.wrongID();
         return false;
     }
 
     public static boolean validateRUC(String ruc) {
         if (ruc.equals(null) || ruc.equals("")) {
             // ruc vacio
+            Messages.messageEmptyRUC();
             return false;
         }
         if (!ruc.matches("\\d+")) {
             // mensaje de no son numeros
+            Messages.noNumbersRUC();
             System.out.println("solo numeros");
             return false;
         }
         if ((ruc.length() != 10 && ruc.length() != 13)) {
             // ruc no valido
+            Messages.wrongRUC();
             return false;
         }
 
@@ -88,6 +97,7 @@ public class Validations {
                 return true;
             } catch (NumberFormatException e) {
                 // mensaje de error
+                Messages.errorMessage();
                 return false;
             }
         }
@@ -99,6 +109,7 @@ public class Validations {
             return true;
         } else {
             // mensaje nombre no valido
+            Messages.wrongName();
         }
         return false;
     }
@@ -108,6 +119,7 @@ public class Validations {
             return true;
         } else {
             // mensaje apellido no valido
+            Messages.wrongLastName();
         }
         return false;
     }
@@ -117,7 +129,8 @@ public class Validations {
 
             return true;
         } else {
-            // mensaje apellido no valido
+            // mensaje dirreccion no valido
+            Messages.wrongAddress();
         }
         return false;
     }
@@ -127,6 +140,7 @@ public class Validations {
             return true;
         } else {
             // mensaje celular no no valido
+            Messages.wrongPhoneNumber();
         }
         return false;
     }
@@ -136,6 +150,7 @@ public class Validations {
             return true;
         } else {
             // mensaje correo no no valido
+            Messages.wrongEmail();
         }
         return false;
     }
@@ -147,6 +162,7 @@ public class Validations {
             return true;
         } else {
             // mensaje identificador prodcuto no no valido
+            Messages.wrongIDProduct();
         }
         return false;
     }
@@ -156,6 +172,7 @@ public class Validations {
             return true;
         } else {
             // mensaje nombre producto no no valido
+            Messages.wrongNameProduct();
         }
         return false;
     }
@@ -165,6 +182,7 @@ public class Validations {
             return true;
         } else {
             // mensaje price no valido
+            Messages.wrongPriceProduct();
         }
         return false;
     }
@@ -174,6 +192,7 @@ public class Validations {
             return true;
         } else {
             // mensaje price no valido
+        Messages.wrongIVA();
         }
         return false;
     }
