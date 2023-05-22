@@ -11,7 +11,7 @@ public class ClientDao {
    
     
     //inserta a un cliente a la lista
-    public boolean insertClient(String names, String lastnames, String id, String typeId, String address,
+    public boolean insertClient(String names, String lastnames, String id, int typeId, String address,
             String phoneNumber, String email) {
         try {
             clients.add(new Client(names, lastnames, id, typeId, address, phoneNumber, email));
@@ -22,7 +22,7 @@ public class ClientDao {
         return false;
     }
 
-    public boolean updateProductClient(String id) {
+    public boolean updateClient(String id) {
         try {
             for (Client client : clients) {
                 if (client.getId().equals(id)) {    

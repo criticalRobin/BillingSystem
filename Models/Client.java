@@ -4,12 +4,12 @@ public class Client {
     private String names;
     private String lastnames;
     private String id;
-    private String typeId;
+    private int typeId;
     private String address;
     private String phoneNumber;
     private String email;
 
-    public Client(String names, String lastnames, String id, String typeId, String address, String phoneNumber,
+    public Client(String names, String lastnames, String id, int typeId, String address, String phoneNumber,
             String email) {
         this.names = names;
         this.lastnames = lastnames;
@@ -44,11 +44,11 @@ public class Client {
         this.id = id;
     }
 
-    public String getTypeId() {
+    public int getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(String typeId) {
+    public void setTypeId(int typeId) {
         this.typeId = typeId;
     }
 

@@ -15,7 +15,7 @@ public class Messages {
     }
 
     /////////////////////////////////////////////////
-    // Persona
+    // Client
     public static void updateProductClient() {
         System.out.print("1.Registar Cliente \n 2.Modificar Cliente \n4.Borrar Cliente \nIngresa tu opcion: ");
     }
@@ -40,11 +40,11 @@ public class Messages {
     }
 
     // Un por si acaso se uso el tipo e Id
-    public static void typeId(int i) {
+    public static void requestTypeId() {
         System.out.print("Eliga que documento desea ingresar los datos.\n1.Cedula\n2.RUC\nIngresa tu opcion:");
     }
 
-    public static void confirmationTypeId(int i) {
+    public static void confirmationTypeId() {
         System.out.print("Ha elegido");
     }
 

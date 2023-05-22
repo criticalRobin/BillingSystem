@@ -14,10 +14,16 @@ public class ScannerReader {
         return SC.nextInt();
     }
 
+    public static int readTypeID(){
+        Messages.requestTypeId();
+        return SC.nextInt();
+    }
+
     public static String readName() {
         Messages.requestName();
         return SC.nextLine();
     }
+
 
     public static String readLastName() {
         Messages.requestSurname();
