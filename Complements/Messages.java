@@ -134,7 +134,7 @@ public class Messages {
 
     public static void noNumbersID() {
         System.out.println("El campo cedula solo acepta numeros");
-
+    }
     public static void wrongTypeID() {
         System.out.println("El tipo de Id no es valido");
     }
