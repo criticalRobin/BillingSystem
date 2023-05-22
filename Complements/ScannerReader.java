@@ -24,6 +24,10 @@ public class ScannerReader {
         return SC.nextLine();
     }
 
+    public static String readID() {
+        Messages.requestId();
+        return SC.nextLine();
+    }
 
     public static String readLastName() {
         Messages.requestSurname();
