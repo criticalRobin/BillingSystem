@@ -8,40 +8,40 @@ public class ScannerReader {
     // Aqui ejemplo de como uso el metodo del mensaje de pedir nombre y en esta
     // clase Scanner lee el nombre ingresado por teclado
     ////////////////////////////////////////////////////////////////////////
-    //Clients
-    public static int readUpdateClient(){
+    // Clients
+    public static int readUpdateClient() {
         Messages.updateClientOptions();
         return SC.nextInt();
     }
-    
+
     public static String readName() {
         Messages.requestName();
         return SC.nextLine();
     }
 
-    public static String readLastName(){
+    public static String readLastName() {
         Messages.requestSurname();
         return SC.nextLine();
     }
 
-    public static String readEmail(){
+    public static String readEmail() {
         Messages.requestEmail();
         return SC.nextLine();
     }
 
-    public static String readAddress(){
+    public static String readAddress() {
         Messages.requestAddress();
         return SC.nextLine();
     }
 
-    public static String readPhoneNumber(){
+    public static String readPhoneNumber() {
         Messages.requestPhone();
         return SC.nextLine();
     }
     //////////////////////////////////////////////////////////
 
     ///////////////////////////////////////////////////
-    //////////Products
+    ////////// Products
     public static int readUpdateProductOption() {
         Messages.updateProductOptions();
         return SC.nextInt();
@@ -57,9 +57,33 @@ public class ScannerReader {
         return SC.nextDouble();
     }
     ///////////////////////////////////
-    
-    public static String continueUpdate(){
+
+    public static String continueUpdate() {
         Messages.continueUpdate();
         return SC.nextLine();
+    }
+
+    //////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////
+    ////////// Menu
+    public static int readOptionFromMenu() {
+        Messages.menuOptions();
+        return SC.nextInt();
+    }
+
+    public static int readOptionFromAddMenu() {
+        Messages.addMenu();
+        return SC.nextInt();
+    }
+
+    public static int readOptionFromUpdateMenu() {
+        Messages.updateMenu();
+        return SC.nextInt();
+    }
+
+    public static int readOptionFromDeleteMenu() {
+        Messages.deleteMenu();
+        return SC.nextInt();
     }
 }
