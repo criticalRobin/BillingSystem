@@ -22,10 +22,10 @@ public class ClientDao {
         try {
             for (Client client : clients) {
                 if (client.getId().equals(id)) {
-                    int option = ScannerReader.readUpdateProductOption();
+                    int option = ScannerReader.readUpdateClient();
                     switch (option) {
                         case 1:
-                            String newName = ScannerReader.readProductName();
+                            String newName = ScannerReader.readName();
                             client.setNames(newName);
                             break;
                         case 2:
