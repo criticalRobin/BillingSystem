@@ -17,57 +17,52 @@ public class ClientController {
         String phone;
         do {
             typeId = ScannerReader.readTypeID();
-            if (!Validations.validateIDType(String.valueOf(typeId))) {
-                Messages.wrongTypeID();
+            if (!Validations.validateIDType(String.valueOf(typeId)))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
 
         do {
             name = ScannerReader.readName();
-            if (!Validations.validateName(name)) {
-                Messages.wrongName();
+            if (!Validations.validateName(name))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
 
         do {
             Lastname = ScannerReader.readLastName();
-            if (!Validations.validateLastName(Lastname)) {
-                Messages.wrongLastName();
+            if (!Validations.validateLastName(Lastname))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
 
         do {
             email = ScannerReader.readEmail();
-            if (!Validations.validateEmail(email)) {
-                Messages.wrongEmail();
+            if (!Validations.validateEmail(email))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
 
         do {
             address = ScannerReader.readAddress();
-            if (!Validations.validateAddress(address)) {
-                Messages.wrongAddress();
+            if (!Validations.validateAddress(address))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
 
         do {
             phone = ScannerReader.readPhoneNumber();
-            if (!Validations.validatePhoneNumber(phone)) {
-                Messages.wrongPhoneNumber();
+            if (!Validations.validatePhoneNumber(phone))
                 result = false;
-            } else
+            else
                 result = true;
         } while (!result);
+        
         ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
         Messages.registerCliente();
         return result;
