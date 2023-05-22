@@ -1,8 +1,9 @@
 package Complements;
 
 public class Validations {
+
     public static boolean validateIDType(String idType) {
-        if (!idType.matches("^[01]$")) {
+        if (!idType.matches("^[12]$")) {
             // mensaje de ID no es valido
             return false;
         }
