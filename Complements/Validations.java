@@ -169,4 +169,21 @@ public class Validations {
         return false;
     }
 
+    ///////////////////////////Validacion continuar
+    // continuar con la modificacion
+    public boolean continueUpdate() {
+        boolean result = false;
+        do {
+            String confirm = ScannerReader.continueUpdate().toUpperCase();
+            if (confirm.equals("Y")) {
+                return true;
+            } else if (confirm.equals("N")) {
+                return false;
+            } else {
+                result = false;
+            }
+        } while (!result);
+        return result;
+    }
+
 }

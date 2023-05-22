@@ -58,4 +58,8 @@ public class ScannerReader {
     }
     ///////////////////////////////////
     
+    public static String continueUpdate(){
+        Messages.continueUpdate();
+        return SC.nextLine();
+    }
 }

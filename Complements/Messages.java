@@ -72,6 +72,10 @@ public class Messages {
         System.out.print("Ha eliminado al cliente");
     }
 
+    public static void continueUpdate() {
+        System.out.println("Desea continuar con la modificación S/N");
+    }
+
 /////////////////////////////////////////////////
 //Errores
     //mensaje general de error
