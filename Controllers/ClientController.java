@@ -10,6 +10,7 @@ public class ClientController {
     public static boolean addClientController() {
         boolean result = true;
         int typeId;
+        String id;
         String name;
         String Lastname;
         String email;
@@ -21,6 +22,21 @@ public class ClientController {
                 result = false;
             else
                 result = true;
+        } while (!result);
+
+        do {
+            id = ScannerReader.readID();
+            if (typeId == 1)
+                if (!Validations.validateID(id))
+                    result = false;
+                else
+                    result = true;
+            else {
+                if (!Validations.validateRUC(id))
+                    result = false;
+                else
+                    result = true;
+            }
         } while (!result);
 
         do {
@@ -68,22 +84,21 @@ public class ClientController {
         return result;
     }
 
-    public static boolean updateClientController(){
-        String id =ScannerReader.readID();
-        if (Validations.validateID(id)){
+    public static boolean updateClientController() {
+        String id = ScannerReader.readID();
+        if (Validations.validateID(id) || Validations.validateRUC(id)) {
             ClientDao.updateClient(id);
             return true;
         }
         return false;
     }
 
-    public static boolean delateClientController(){
-        String id =ScannerReader.readID();
-        if (Validations.validateID(id)){
+    public static boolean delateClientController() {
+        String id = ScannerReader.readID();
+        if (Validations.validateID(id) || Validations.validateRUC(id)) {
             ClientDao.deleteClient(id);
         }
         return false;
     }
 
 }
-

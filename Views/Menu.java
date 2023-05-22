@@ -2,6 +2,7 @@ package Views;
 
 import Complements.Messages;
 import Complements.ScannerReader;
+import Controllers.ClientController;
 
 public class Menu {
     public static void principalMenu() {
@@ -43,6 +44,7 @@ public class Menu {
                 switch (preMenu) {
                     case 1:
                         System.out.println("Clientes");
+                        ClientController.addClientController();
                         break;
                     case 2:
                         System.out.println("Productos");
@@ -71,6 +73,7 @@ public class Menu {
                 switch (preMenu) {
                     case 1:
                         System.out.println("Clientes");
+                        ClientController.updateClientController();
                         break;
                     case 2:
                         System.out.println("Productos");
@@ -99,6 +102,7 @@ public class Menu {
                 switch (preMenu) {
                     case 1:
                         System.out.println("Clientes");
+                        ClientController.delateClientController();
                         break;
                     case 2:
                         System.out.println("Productos");
