@@ -32,7 +32,6 @@ public class ClientDao {
                                 String newName = ScannerReader.readName();
                                 if (Validations.validateName(newName)) 
                                     client.setNames(newName);
-                   
                                 break;
                             case 2:
                                 String newLastName = ScannerReader.readLastName();
