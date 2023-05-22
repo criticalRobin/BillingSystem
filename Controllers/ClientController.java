@@ -1,5 +1,6 @@
 package Controllers;
 
+import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
 import Models.ClientDao;
@@ -8,8 +9,10 @@ public class ClientController {
     
     public boolean addClientController(){
         int typeId = ScannerReader.readTypeID();
-        if (!Validations.validateIDType(String.valueOf(typeId)))
+        if (!Validations.validateIDType(String.valueOf(typeId))){
+            Messages.wrongTypeID();
             return false;
+        }
         String name = ScannerReader.readName();
         if (!Validations.validateName(name))
             return false;
@@ -26,6 +29,7 @@ public class ClientController {
         if (!Validations.validatePhoneNumber(phone))
             return false;
         ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
-            return false;
+        Messages.registerCliente();
+        return true;
     }
 }
