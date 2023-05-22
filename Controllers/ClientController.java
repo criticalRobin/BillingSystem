@@ -7,7 +7,7 @@ import Models.ClientDao;
 
 public class ClientController {
 
-    public boolean addClientController() {
+    public static boolean addClientController() {
         boolean result = true;
         int typeId;
         String name;
@@ -62,9 +62,15 @@ public class ClientController {
             else
                 result = true;
         } while (!result);
-        
+
         ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
         Messages.registerCliente();
         return result;
+    }
+
+    public static boolean updateClientController(){
+        String id =null;
+        ClientDao.updateClient(id);
+        return true;
     }
 }

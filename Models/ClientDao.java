@@ -8,9 +8,8 @@ import Complements.Validations;
 
 public class ClientDao {
     static List<Client> clients = new LinkedList<>();
-   
-    
-    //inserta a un cliente a la lista
+
+    // inserta a un cliente a la lista
     public static boolean insertClient(String names, String lastnames, String id, int typeId, String address,
             String phoneNumber, String email) {
         try {
@@ -25,54 +24,40 @@ public class ClientDao {
     public static boolean updateClient(String id) {
         try {
             for (Client client : clients) {
-                if (client.getId().equals(id)) {    
+                if (client.getId().equals(id)) {
                     do {
                         int option = ScannerReader.readUpdateClient();
                         switch (option) {
                             case 1:
                                 String newName = ScannerReader.readName();
-                                if (Validations.validateName(newName)){
-                                client.setNames(newName);
-                                break;
-                                }
-                                Messages.wrongName();
+                                if (Validations.validateName(newName)) 
+                                    client.setNames(newName);
+                   
                                 break;
                             case 2:
                                 String newLastName = ScannerReader.readLastName();
-                                if (Validations.validateLastName(newLastName)){
-                                client.setLastnames(newLastName);
-                                break;
-                                }
-                                Messages.wrongLastName();
+                                if (Validations.validateLastName(newLastName)) 
+                                    client.setLastnames(newLastName);                               
                                 break;
                             case 3:
                                 String newAddress = ScannerReader.readAddress();
-                                if (Validations.validateAddress(newAddress)){
-                                client.setAddress(newAddress);
-                                break;
-                                }
-                                Messages.wrongAddress();
+                                if (Validations.validateAddress(newAddress)) 
+                                    client.setAddress(newAddress);                                                     
                                 break;
                             case 4:
                                 String newEmail = ScannerReader.readEmail();
-                                if (Validations.validateEmail(newEmail)){
-                                client.setEmail(newEmail);
-                                break;
-                                }
-                                Messages.wrongEmail();
+                                if (Validations.validateEmail(newEmail)) 
+                                    client.setEmail(newEmail);                             
                                 break;
                             case 5:
                                 String newPhone = ScannerReader.readPhoneNumber();
-                                if (Validations.validatePhoneNumber(newPhone)){
-                                client.setPhoneNumber(newPhone);
-                                break;
-                                }
-                                Messages.wrongPhoneNumber();
+                                if (Validations.validatePhoneNumber(newPhone)) 
+                                    client.setPhoneNumber(newPhone);                              
                                 break;
                             default:
                                 Messages.switchDefaultMessage();
                                 break;
-                        }    
+                        }
                     } while (Validations.continueUpdate());
                 }
             }
