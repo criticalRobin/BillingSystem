@@ -121,7 +121,7 @@ public class Messages {
     }
 
     //Telefono
-    public static void wrongPhone() {
+    public static void wrongPhoneNumber() {
         System.out.println("El numero de contacto no es valido");
     }
 
@@ -135,12 +135,17 @@ public class Messages {
     }
 
     public static void noNumbersID() {
-        System.out.println("Id solo acepta numeros");
+        System.out.println("Cedula solo acepta numeros");
     }
 
     public static void wrongTypeID() {
         System.out.println("El tipo de Id no es valido");
     }
+
+    public static void messageEmptyID() {
+        System.out.println("Mensaje Cedula vacio");
+    }
+
 
     //RUC
     public static void wrongRUC() {
@@ -155,8 +160,8 @@ public class Messages {
         System.out.println("RUC solo acepta numeros");
     }
 
-    public static void wrongIdProduct() {
-        System.out.println("Id producto incorrecto");
+    public static void messageEmptyRUC() {
+        System.out.println("Campo RUC vacio");
     }
 
     //producto
@@ -172,6 +177,11 @@ public class Messages {
         System.out.println("ID del producto no valido");
     }
 
+
+    public static void wrongIVA() {
+        System.out.println("IVA no valido");
+    }
+    
     //Servicio
     public static void wrongNameService() {
         System.out.println("Nombre del servicio no valido");
