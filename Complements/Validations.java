@@ -1,7 +1,7 @@
 package Complements;
 
 public class Validations {
-    public boolean validateIDType(String idType) {
+    public static boolean validateIDType(String idType) {
         if (!idType.matches("^[01]$")) {
             // mensaje de ID no es valido
             return false;
@@ -9,7 +9,7 @@ public class Validations {
         return true;
     }
 
-    public boolean validateID(String cedula) {
+    public static boolean validateID(String cedula) {
         if (cedula.equals(null) || cedula.equals("")) {
             // mensaje de vacio
             return false;
@@ -50,7 +50,7 @@ public class Validations {
         return false;
     }
 
-    public boolean validateRUC(String ruc) {
+    public static boolean validateRUC(String ruc) {
         if(ruc.equals(null)|| ruc.equals("")){
             //ruc vacio
             return false;
@@ -93,7 +93,7 @@ public class Validations {
 
     }
     
-    public boolean validateName(String name){
+    public static boolean validateName(String name){
         if (name.matches("^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)?$")) {
             return true;
         }else {
@@ -101,7 +101,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validateLastName(String lastName){
+    public static boolean validateLastName(String lastName){
         if (lastName.matches("^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)?$")) {
             return true;
         }else {
@@ -109,7 +109,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validateAddress(String address){
+    public static boolean validateAddress(String address){
         if (address.matches("^[A-Za-z0-9áéíóúÁÉÍÓÚñÑ\\s.,-]{2,}$")) {
             System.out.println("siuu");
             return true;
@@ -118,7 +118,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validatePhoneNumber(String number){
+    public static boolean validatePhoneNumber(String number){
         if (number.matches("^09\\d{8}$")) {
             return true;
         }else {
@@ -126,7 +126,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validateEmail(String email){
+    public static boolean validateEmail(String email){
         if (email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
             return true;
         }else {
@@ -136,7 +136,7 @@ public class Validations {
     }
     //////////////////////////validaciones productos
     // permitir números, letras o una combinación de ambos en el identificador
-    public boolean validateIdentifier(String identifier) {
+    public static boolean validateIdentifier(String identifier) {
         if (identifier.matches("^[A-Za-z0-9]+$")) {
             return true;
         } else {
@@ -144,7 +144,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validateProductName(String name) {
+    public static boolean validateProductName(String name) {
         if (name.matches("^[A-Za-z\\s-]+$")) {
             return true;
         } else {
@@ -152,7 +152,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validatePrice(String price) {
+    public static boolean validatePrice(String price) {
         if (price.matches("^(\\d+(\\.\\d{1,2})?)$")) {
             return true;
         } else {
@@ -160,7 +160,7 @@ public class Validations {
         }
         return false;
     }
-    public boolean validateIVA(String iva) {
+    public static boolean validateIVA(String iva) {
         if (iva.matches("^[0-9]+$")) {
             return true;
         } else {
@@ -171,7 +171,7 @@ public class Validations {
 
     ///////////////////////////Validacion continuar
     // continuar con la modificacion
-    public boolean continueUpdate() {
+    public static boolean continueUpdate() {
         boolean result = false;
         do {
             String confirm = ScannerReader.continueUpdate().toUpperCase();
@@ -180,6 +180,7 @@ public class Validations {
             } else if (confirm.equals("N")) {
                 return false;
             } else {
+                Messages.switchDefaultMessage();
                 result = false;
             }
         } while (!result);

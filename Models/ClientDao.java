@@ -8,7 +8,7 @@ import Complements.Validations;
 
 public class ClientDao {
     List<Client> clients = new LinkedList<>();
-    Validations validation = new Validations();
+   
     
     //inserta a un cliente a la lista
     public boolean insertClient(String names, String lastnames, String id, String typeId, String address,
@@ -53,7 +53,7 @@ public class ClientDao {
                                 Messages.switchDefaultMessage();
                                 break;
                         }    
-                    } while (validation.continueUpdate());
+                    } while (Validations.continueUpdate());
                 }
             }
             return true;
