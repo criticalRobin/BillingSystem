@@ -110,6 +110,22 @@ public class Messages {
         System.out.println("El numero de contacto no es valido");
     }
 
+    public static void wrongId() {
+        System.out.println("El numero de cedula es incorrecto");
+    }
+
+    public static void numberwrongId() {
+        System.out.println("El numero del Id es incorrecto");
+    }
+
+    public static void wrongRUC() {
+        System.out.println("El numero de RUC es incorrecto");
+    }
+
+    public static void numberwrongRUC() {
+        System.out.println("El numero del RUC es incorrecto");
+    }
+
     /////////////////////////////////////////////////
     // Productos
     // Producto agregado
