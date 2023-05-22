@@ -28,21 +28,21 @@ public class Messages {
 
     // sirve para pedir el nombre
     public static void requestName() {
-        System.out.print("Ingresa tu nombre por favor:  ");
+        System.out.print("Ingrese nombre cliente:  ");
     }
 
     public static void requestSurname() {
-        System.out.print("Ingresa tu apellido por favor:  ");
+        System.out.print("Ingrese apellido cliente:  ");
     }
 
     // sirve para pedir el id
     public static void requestId() {
-        System.out.print("Ingresa su Id: ");
+        System.out.print("Ingrese Id cliente: ");
     }
 
     // Un por si acaso se uso el tipo e Id
     public static void requestTypeId() {
-        System.out.print("Eliga que documento desea ingresar los datos.\n1.Cedula\n2.RUC\nIngresa tu opcion:");
+        System.out.print("Eliga tipo de documento.\n1.Cedula\n2.RUC\nIngresa tu opcion:");
     }
 
     public static void confirmationTypeId() {
@@ -51,17 +51,17 @@ public class Messages {
 
     // sirve para pedir el telefono
     public static void requestPhone() {
-        System.out.print("Ingresa su numero de telefono: ");
+        System.out.print("Ingrese numero de telefono del cliente: ");
     }
 
     // sirve pa pedir la direccion
     public static void requestAddress() {
-        System.out.print("Ingresa su direccion: ");
+        System.out.print("Ingrese direccion cliente : ");
     }
 
     // sirve para pedir el correo
     public static void requestEmail() {
-        System.out.print("Ingresa su correo: ");
+        System.out.print("Ingrese correo cliente : ");
     }
 
     public static void registerCliente() {
@@ -73,14 +73,12 @@ public class Messages {
     }
 
     public static void modificateCliente() {
-        System.out.print("Ha eliminado al cliente");
+        System.out.print("Ha modificado al cliente");
     }
 
     public static void continueUpdate() {
         System.out.println("Desea continuar con la modificación S/N");
     }
-
-
 
 
 
@@ -102,41 +100,40 @@ public class Messages {
 
     //Nombre
     public static void wrongName() {
-        System.out.println("El nombre no es valido");
+        System.out.println("El nombre del cliente no es valido");
     }
 
     //Apellido
     public static void wrongLastName() {
-        System.out.println("El Apellido no es valido");
+        System.out.println("El apellido del cliente no es valido");
     }
 
     //Direccion
     public static void wrongAddress() {
-        System.out.println("La dirección no es valido");
+        System.out.println("La dirección del clienteno es valido");
     }
 
     //Correo
     public static void wrongEmail() {
-        System.out.println("El correo electrónico no es valido");
+        System.out.println("El correo electrónico del cliente no es valido");
     }
 
     //Telefono
     public static void wrongPhoneNumber() {
-        System.out.println("El numero de contacto no es valido");
+        System.out.println("El numero de contacto del cliente no es valido");
     }
 
     //Cedula 
     public static void wrongID() {
-        System.out.println("Cedula no es valido");
+        System.out.println("Cedula del cliente no es valido");
     }
 
     public static void wrongRangeID() {
-        System.out.println("Cedula fuera rango");
+        System.out.println("Cedula del cliente esta fuera rango");
     }
 
     public static void noNumbersID() {
-        System.out.println("Cedula solo acepta numeros");
-    }
+        System.out.println("El campo cedula solo acepta numeros");
 
     public static void wrongTypeID() {
         System.out.println("El tipo de Id no es valido");
@@ -149,14 +146,10 @@ public class Messages {
 
     //RUC
     public static void wrongRUC() {
-        System.out.println("RUC no es valido");
+        System.out.println("RUC del cliente no es valido");
     }
 
     public static void noNumbersRUC() {
-        System.out.println("RUC solo acepta numeros");
-    }
-
-    public static void characterErrorRUC() {
         System.out.println("RUC solo acepta numeros");
     }
 
@@ -219,22 +212,22 @@ public class Messages {
 
     // Nombre producto
     public static void requestProductName() {
-        System.out.print("Ingresa el nombre del producto: ");
+        System.out.print("Ingrese el nombre del producto: ");
     }
 
     // Id producto
     public static void prodcutId() {
-        System.out.print("Ingresa su Id: ");
+        System.out.print("Ingrese su Id: ");
     }
 
     // Precio producto
     public static void requestProductPriceByUnit() {
-        System.out.print("Ingresa el precio del producto: ");
+        System.out.print("Ingrese el precio del producto: ");
     }
 
     // Unidad de medida
     public static void requestProductUnit() {
-        System.out.print("Ingresa la unidad de medida: ");
+        System.out.print("Ingrese la unidad de medida: ");
     }
 
     // IVA
@@ -246,17 +239,17 @@ public class Messages {
     // Servicios
     // Opciones de servicios
     public static void updateServiceOptions() {
-        System.out.print("1.Nombre \n2.Precio Unitario \nIngresa tu opcion: ");
+        System.out.print("1.Nombre \n2.Precio Unitario \nIngrese tu opcion: ");
     }
 
     // Nombre servicio
     public static void nameService() {
-        System.out.print("Escriba el nombre servicio: ");
+        System.out.print("Escribe el nombre servicio: ");
     }
 
     // Precio servicio
     public static void priceService() {
-        System.out.print("Escriba el valor del servicio: ");
+        System.out.print("Escribe el valor del servicio: ");
     }
 
     public static void registerService() {
@@ -268,7 +261,7 @@ public class Messages {
     }
 
     public static void modificateService() {
-        System.out.print("Ha eliminado un servicio: ");
+        System.out.print("Ha modificado un servicio: ");
     }
 
     /////////////////////////////////////////////////
