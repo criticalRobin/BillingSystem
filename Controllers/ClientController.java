@@ -69,8 +69,19 @@ public class ClientController {
     }
 
     public static boolean updateClientController(){
-        String id =null;
-        ClientDao.updateClient(id);
-        return true;
+        String id =ScannerReader.readID();
+        if (Validations.validateID(id)){
+            ClientDao.updateClient(id);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean delateClientController(){
+        String id =ScannerReader.readID();
+        if (Validations.validateID(id)){
+            ClientDao.deleteClient(id);
+        }
+        return false;
     }
 }

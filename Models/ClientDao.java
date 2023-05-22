@@ -30,28 +30,38 @@ public class ClientDao {
                         switch (option) {
                             case 1:
                                 String newName = ScannerReader.readName();
-                                if (Validations.validateName(newName)) 
+                                if (Validations.validateName(newName)) {
                                     client.setNames(newName);
+                                    Messages.modificateCliente();
+                                }
                                 break;
                             case 2:
                                 String newLastName = ScannerReader.readLastName();
-                                if (Validations.validateLastName(newLastName)) 
-                                    client.setLastnames(newLastName);                               
+                                if (Validations.validateLastName(newLastName)) {
+                                    client.setLastnames(newLastName);
+                                    Messages.modificateCliente();
+                                }
                                 break;
                             case 3:
                                 String newAddress = ScannerReader.readAddress();
-                                if (Validations.validateAddress(newAddress)) 
-                                    client.setAddress(newAddress);                                                     
+                                if (Validations.validateAddress(newAddress)) {
+                                    client.setAddress(newAddress);
+                                    Messages.modificateCliente();
+                                }
                                 break;
                             case 4:
                                 String newEmail = ScannerReader.readEmail();
-                                if (Validations.validateEmail(newEmail)) 
-                                    client.setEmail(newEmail);                             
+                                if (Validations.validateEmail(newEmail)) {
+                                    client.setEmail(newEmail);
+                                    Messages.modificateCliente();
+                                }
                                 break;
                             case 5:
                                 String newPhone = ScannerReader.readPhoneNumber();
-                                if (Validations.validatePhoneNumber(newPhone)) 
-                                    client.setPhoneNumber(newPhone);                              
+                                if (Validations.validatePhoneNumber(newPhone)) {
+                                    client.setPhoneNumber(newPhone);
+                                    Messages.modificateCliente();
+                                }
                                 break;
                             default:
                                 Messages.switchDefaultMessage();
