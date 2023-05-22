@@ -52,6 +52,12 @@ public class ScannerReader {
 
     ///////////////////////////////////////////////////
     ////////// Products
+    
+    public static String readProductID(){
+    Messages.requestProductID();
+    return SC.nextLine();
+    }
+
     public static int readUpdateProductOption() {
         Messages.updateProductOptions();
         return SC.nextInt();
@@ -66,6 +72,47 @@ public class ScannerReader {
         Messages.requestProductPriceByUnit();
         return SC.nextDouble();
     }
+
+    public static double readProductUnit() {
+        Messages.requestProductUnit();
+        return SC.nextDouble();
+    }
+
+    public static double readProductIVA() {
+        Messages.requestProductIVA();
+        return SC.nextDouble();
+    }
+
+    //////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////
+    ////////// Servicios
+
+    public static String readServiceID(){
+        Messages.requestServiceID();
+        return SC.nextLine();
+        }
+    
+        public static int readUpdateServiceOption() {
+            Messages.updateServiceOptions();
+            return SC.nextInt();
+        }
+    
+        public static String readServiceName() {
+            Messages.requestServiceName();
+            return SC.nextLine();
+        }
+    
+        public static double readServicePricebyUnit() {
+            Messages.requestServicePrice();
+            return SC.nextDouble();
+        }
+    
+        public static double readServiceIVA() {
+            Messages.requestServiceIVA();
+            return SC.nextDouble();
+        }
+
     ///////////////////////////////////
 
     public static String continueUpdate() {
@@ -96,4 +143,5 @@ public class ScannerReader {
         Messages.deleteMenu();
         return SC.nextInt();
     }
+
 }

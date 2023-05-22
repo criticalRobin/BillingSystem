@@ -80,12 +80,6 @@ public class Messages {
         System.out.println("Desea continuar con la modificación S/N");
     }
 
-
-
-
-
-
-
     ///////////////////////////////////////////////////////////
     // Errores
     // mensaje general de error
@@ -134,6 +128,7 @@ public class Messages {
 
     public static void noNumbersID() {
         System.out.println("El campo cedula solo acepta numeros");
+    }
 
     public static void wrongTypeID() {
         System.out.println("El tipo de Id no es valido");
@@ -189,15 +184,6 @@ public class Messages {
     }
 
 
-
-
-
-
-
-
-
-
-
     /////////////////////////////////////////////////
     // Productos
     // Producto agregado
@@ -216,8 +202,8 @@ public class Messages {
     }
 
     // Id producto
-    public static void prodcutId() {
-        System.out.print("Ingrese su Id: ");
+    public static void requestProductID() {
+        System.out.print("Ingrese el Id del producto: ");
     }
 
     // Precio producto
@@ -231,8 +217,8 @@ public class Messages {
     }
 
     // IVA
-    public static void IVAproduct() {
-        System.out.print("ingrese el IVA del product: ");
+    public static void requestProductIVA() {
+        System.out.print("Ingrese el IVA del producto: ");
     }
 
     /////////////////////////////////////////////////
@@ -243,12 +229,16 @@ public class Messages {
     }
 
     // Nombre servicio
-    public static void nameService() {
+    public static void requestServiceName() {
         System.out.print("Escribe el nombre servicio: ");
     }
 
+    public static void requestServiceID() {
+        System.out.print("Ingrese el Id del servicio: ");
+    }
+
     // Precio servicio
-    public static void priceService() {
+    public static void requestServicePrice() {
         System.out.print("Escribe el valor del servicio: ");
     }
 
@@ -262,6 +252,14 @@ public class Messages {
 
     public static void modificateService() {
         System.out.print("Ha modificado un servicio: ");
+    }
+
+    public static void requestServiceIVA() {
+        System.out.print("Ingrese el IVA del servicio: ");
+    }
+
+    public static void requestServiceUnit() {
+        System.out.print("Ingrese la unidad de medida: ");
     }
 
     /////////////////////////////////////////////////
