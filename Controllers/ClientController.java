@@ -20,7 +20,7 @@ public class ClientController {
             if (!Validations.validateIDType(String.valueOf(typeId))) {
                 Messages.wrongTypeID();
                 result = false;
-            }else
+            } else
                 result = true;
         } while (!result);
 
@@ -29,23 +29,47 @@ public class ClientController {
             if (!Validations.validateName(name)) {
                 Messages.wrongName();
                 result = false;
-            }else
+            } else
                 result = true;
         } while (!result);
-        Lastname = ScannerReader.readLastName();
-        if (!Validations.validateLastName(Lastname))
-            return false;
-        email = ScannerReader.readEmail();
-        if (!Validations.validateEmail(email))
-            return false;
-        address = ScannerReader.readAddress();
-        if (!Validations.validateAddress(address))
-            return false;
-        phone = ScannerReader.readPhoneNumber();
-        if (!Validations.validatePhoneNumber(phone))
-            return false;
+
+        do {
+            Lastname = ScannerReader.readLastName();
+            if (!Validations.validateLastName(Lastname)) {
+                Messages.wrongLastName();
+                result = false;
+            } else
+                result = true;
+        } while (!result);
+
+        do {
+            email = ScannerReader.readEmail();
+            if (!Validations.validateEmail(email)) {
+                Messages.wrongEmail();
+                result = false;
+            } else
+                result = true;
+        } while (!result);
+
+        do {
+            address = ScannerReader.readAddress();
+            if (!Validations.validateAddress(address)) {
+                Messages.wrongAddress();
+                result = false;
+            } else
+                result = true;
+        } while (!result);
+
+        do {
+            phone = ScannerReader.readPhoneNumber();
+            if (!Validations.validatePhoneNumber(phone)) {
+                Messages.wrongPhoneNumber();
+                result = false;
+            } else
+                result = true;
+        } while (!result);
         ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
         Messages.registerCliente();
-        return true;
+        return result;
     }
 }

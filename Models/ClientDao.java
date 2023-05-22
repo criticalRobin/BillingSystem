@@ -67,7 +67,7 @@ public class ClientDao {
                                 client.setPhoneNumber(newPhone);
                                 break;
                                 }
-                                Messages.wrongPhone();
+                                Messages.wrongPhoneNumber();
                                 break;
                             default:
                                 Messages.switchDefaultMessage();
