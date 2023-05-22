@@ -31,23 +31,43 @@ public class ClientDao {
                         switch (option) {
                             case 1:
                                 String newName = ScannerReader.readName();
+                                if (Validations.validateName(newName)){
                                 client.setNames(newName);
+                                break;
+                                }
+                                Messages.wrongName();
                                 break;
                             case 2:
                                 String newLastName = ScannerReader.readLastName();
+                                if (Validations.validateLastName(newLastName)){
                                 client.setLastnames(newLastName);
+                                break;
+                                }
+                                Messages.wrongLastName();
                                 break;
                             case 3:
                                 String newAddress = ScannerReader.readAddress();
+                                if (Validations.validateAddress(newAddress)){
                                 client.setAddress(newAddress);
+                                break;
+                                }
+                                Messages.wrongAddress();
                                 break;
                             case 4:
                                 String newEmail = ScannerReader.readEmail();
+                                if (Validations.validateEmail(newEmail)){
                                 client.setEmail(newEmail);
+                                break;
+                                }
+                                Messages.wrongEmail();
                                 break;
                             case 5:
                                 String newPhone = ScannerReader.readPhoneNumber();
+                                if (Validations.validatePhoneNumber(newPhone)){
                                 client.setPhoneNumber(newPhone);
+                                break;
+                                }
+                                Messages.wrongPhone();
                                 break;
                             default:
                                 Messages.switchDefaultMessage();
@@ -63,4 +83,18 @@ public class ClientDao {
         }
     }
 
+    public boolean deleteClient(String id) {
+        try {
+            for (Client client : clients) {
+                if (client.getId().equals(id)) {
+                    clients.remove(client);
+                    Messages.eliminateCliente();
+                }
+            }
+            return true;
+        } catch (NullPointerException ex) {
+            Messages.errorMessage();
+            return false;
+        }
+    }
 }

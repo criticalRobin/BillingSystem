@@ -87,6 +87,25 @@ public class Messages {
         System.out.println("La opcion ingresada no es valida");
     }
 
+    public static void wrongName() {
+        System.out.println("El nombre no es valido");
+    }
+    
+    public static void wrongLastName() {
+        System.out.println("El Apellido no es valido");
+    }
+
+    public static void wrongAddress() {
+        System.out.println("La dirección no es valido");
+    }
+
+    public static void wrongEmail() {
+        System.out.println("El correo electrónico no es valido");
+    }
+
+    public static void wrongPhone() {
+        System.out.println("El numero de contacto no es valido");
+    }
 
 /////////////////////////////////////////////////
 //Productos 

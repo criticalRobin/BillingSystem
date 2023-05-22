@@ -51,8 +51,8 @@ public class Validations {
     }
 
     public static boolean validateRUC(String ruc) {
-        if(ruc.equals(null)|| ruc.equals("")){
-            //ruc vacio
+        if (ruc.equals(null) || ruc.equals("")) {
+            // ruc vacio
             return false;
         }
         if (!ruc.matches("\\d+")) {
@@ -81,95 +81,103 @@ public class Validations {
             } catch (NumberFormatException e) {
                 return false;
             }
-        }else {
+        } else {
             try {
                 Long.parseLong(ruc);
                 return true;
             } catch (NumberFormatException e) {
-                //mensaje de error
+                // mensaje de error
                 return false;
             }
         }
 
     }
-    
-    public static boolean validateName(String name){
+
+    public static boolean validateName(String name) {
         if (name.matches("^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)?$")) {
             return true;
-        }else {
-        //mensaje nombre no valido
+        } else {
+            // mensaje nombre no valido
         }
         return false;
     }
-    public static boolean validateLastName(String lastName){
+
+    public static boolean validateLastName(String lastName) {
         if (lastName.matches("^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)?$")) {
             return true;
-        }else {
-        //mensaje apellido no valido
+        } else {
+            // mensaje apellido no valido
         }
         return false;
     }
-    public static boolean validateAddress(String address){
+
+    public static boolean validateAddress(String address) {
         if (address.matches("^[A-Za-z0-9áéíóúÁÉÍÓÚñÑ\\s.,-]{2,}$")) {
-            System.out.println("siuu");
+
             return true;
-        }else {
-        //mensaje apellido no valido
+        } else {
+            // mensaje apellido no valido
         }
         return false;
     }
-    public static boolean validatePhoneNumber(String number){
+
+    public static boolean validatePhoneNumber(String number) {
         if (number.matches("^09\\d{8}$")) {
             return true;
-        }else {
-        //mensaje celular no no valido
+        } else {
+            // mensaje celular no no valido
         }
         return false;
     }
-    public static boolean validateEmail(String email){
+
+    public static boolean validateEmail(String email) {
         if (email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
             return true;
-        }else {
-        //mensaje correo no no valido
+        } else {
+            // mensaje correo no no valido
         }
         return false;
     }
-    //////////////////////////validaciones productos
+
+    ////////////////////////// validaciones productos
     // permitir números, letras o una combinación de ambos en el identificador
     public static boolean validateIdentifier(String identifier) {
         if (identifier.matches("^[A-Za-z0-9]+$")) {
             return true;
         } else {
-            //mensaje identificador prodcuto no no valido
-        }
-        return false;
-    }
-    public static boolean validateProductName(String name) {
-        if (name.matches("^[A-Za-z\\s-]+$")) {
-            return true;
-        } else {
-            //mensaje nombre producto no no valido
-        }
-        return false;
-    }
-    public static boolean validatePrice(String price) {
-        if (price.matches("^(\\d+(\\.\\d{1,2})?)$")) {
-            return true;
-        } else {
-            //mensaje price no valido
-        }
-        return false;
-    }
-    public static boolean validateIVA(String iva) {
-        if (iva.matches("^[0-9]+$")) {
-            return true;
-        } else {
-            //mensaje price no valido
+            // mensaje identificador prodcuto no no valido
         }
         return false;
     }
 
-    ///////////////////////////Validacion continuar
+    public static boolean validateProductName(String name) {
+        if (name.matches("^[A-Za-z\\s-]+$")) {
+            return true;
+        } else {
+            // mensaje nombre producto no no valido
+        }
+        return false;
+    }
+
+    public static boolean validatePrice(String price) {
+        if (price.matches("^(\\d+(\\.\\d{1,2})?)$")) {
+            return true;
+        } else {
+            // mensaje price no valido
+        }
+        return false;
+    }
+
+    public static boolean validateIVA(String iva) {
+        if (iva.matches("^[0-9]+$")) {
+            return true;
+        } else {
+            // mensaje price no valido
+        }
+        return false;
+    }
+
+    /////////////////////////// Validacion continuar
     // continuar con la modificacion
     public static boolean continueUpdate() {
         boolean result = false;
