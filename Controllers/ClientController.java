@@ -2,6 +2,7 @@ package Controllers;
 
 import Complements.ScannerReader;
 import Complements.Validations;
+import Models.ClientDao;
 
 public class ClientController {
     
@@ -24,7 +25,7 @@ public class ClientController {
         String phone = ScannerReader.readPhoneNumber();
         if (!Validations.validatePhoneNumber(phone))
             return false;
-        
+        ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
             return false;
     }
 }
