@@ -63,7 +63,7 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        if (Validations.continueAdd("")) {
+                        if (!Validations.continueAdd("")) {
                             result = false;
                             System.out.println("Byeeee");
                         }
@@ -97,7 +97,7 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        if (Validations.continueUpdate("")) {
+                        if (!Validations.continueUpdate("")) {
                             result = false;
                             System.out.println("Byeeee");
                         }
@@ -133,7 +133,7 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        if (Validations.continueDelete("")) {
+                        if (!Validations.continueDelete("")) {
                             result = false;
                             System.out.println("Byeeee");
                         }
