@@ -236,6 +236,10 @@ public class Messages {
         System.out.print("ingrese el IVA: ");
     }
 
+    public static void requestIvaOption() {
+        System.out.print("1.Iva del 0% \n2.Iva del 12% \nIva: ");
+    }
+
     public static void requestProductUmeasure() {
         System.out.print("Ingrese la unidad de media: ");
     }

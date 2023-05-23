@@ -68,8 +68,10 @@ public class ProductDao {
     }
 
     public static void print() {
+        System.out.println("Nombre/Precio/Iva/Id");
         for (Product pro : products) {
-            System.out.println("[" + pro.getName() + " - " + pro.getId() + "]");
+            System.out.println("[" + pro.getName() + " - " + pro.getPriceByUnit() + " - " + pro.getIva() + " - "
+                    + pro.getId() + "]");
         }
     }
 }
