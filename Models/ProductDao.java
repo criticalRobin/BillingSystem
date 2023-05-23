@@ -65,4 +65,10 @@ public class ProductDao {
             return false;
         }
     }
+
+    public static void print() {
+        for (Product pro : products) {
+            System.out.println("[" + pro.getName() + " - " + pro.getId() + "]");
+        }
+    }
 }
