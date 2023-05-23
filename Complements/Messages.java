@@ -162,6 +162,11 @@ public class Messages {
         System.out.println("Campo RUC vacio");
     }
 
+    //Medida
+    public static void wrongExtent() {
+        System.out.println("Magnitud no valida");
+    }
+
     // producto
     public static void wrongNameProduct() {
         System.out.println("Nombre del producto no valido");
