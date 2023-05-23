@@ -76,6 +76,9 @@ public class Client {
         this.email = email;
     }
 
+    public String toString() {
+        return this.id +"--"+ this.names +" "+ this.lastnames;
+    }
     /*
      * public static void main(String[] args) {
      * Validations test = new Validations();
