@@ -12,12 +12,12 @@ public class Bill {
     // metodo provisional
     public static void main(String[] args) {
         Bill b = new Bill();
-        b.impression(new Client("Alex", "Ayme", "1805271937", 1, "En tu corazon", "0980912722", "dayme1983@"));
+        b.impression(new Client("Alex", "Ayme", "1805271937", "1", "En tu corazon", "0980912722", "dayme1983@"));
     }
 
     public void impression(Client c) {
         // impresion si tiene cedula
-        if (c.getTypeId() == 1) {
+        if (c.getTypeId() == "1") {
             System.out.println("********************************Factura**********************************");
             System.out.printf("Cliente: %s\t\t\tCédula: %s\n" +
                     "Correo Electrónico: %s\t\tCelular: %s\n"
