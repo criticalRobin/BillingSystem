@@ -10,7 +10,7 @@ public class ClientDao {
     public static List<Client> clients = new LinkedList<>();
 
     // inserta a un cliente a la lista
-    public static boolean insertClient(String names, String lastnames, String id, int typeId, String address,
+    public static boolean insertClient(String names, String lastnames, String id, String typeId, String address,
             String phoneNumber, String email) {
         try {
             clients.add(new Client(names, lastnames, id, typeId, address, phoneNumber, email));
@@ -26,37 +26,37 @@ public class ClientDao {
             for (Client client : clients) {
                 if (client.getId().equals(id)) {
                     do {
-                        int option = ScannerReader.readUpdateClient();
+                        String option = ScannerReader.readUpdateClient();
                         switch (option) {
-                            case 1:
+                            case "1":
                                 String newName = ScannerReader.readName();
                                 if (Validations.validateName(newName)) {
                                     client.setNames(newName);
                                     Messages.modificateCliente();
                                 }
                                 break;
-                            case 2:
+                            case "2":
                                 String newLastName = ScannerReader.readLastName();
                                 if (Validations.validateLastName(newLastName)) {
                                     client.setLastnames(newLastName);
                                     Messages.modificateCliente();
                                 }
                                 break;
-                            case 3:
+                            case "3":
                                 String newAddress = ScannerReader.readAddress();
                                 if (Validations.validateAddress(newAddress)) {
                                     client.setAddress(newAddress);
                                     Messages.modificateCliente();
                                 }
                                 break;
-                            case 4:
+                            case "4":
                                 String newEmail = ScannerReader.readEmail();
                                 if (Validations.validateEmail(newEmail)) {
                                     client.setEmail(newEmail);
                                     Messages.modificateCliente();
                                 }
                                 break;
-                            case 5:
+                            case "5":
                                 String newPhone = ScannerReader.readPhoneNumber();
                                 if (Validations.validatePhoneNumber(newPhone)) {
                                     client.setPhoneNumber(newPhone);
