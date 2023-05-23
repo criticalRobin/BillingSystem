@@ -52,9 +52,9 @@ public class ScannerReader {
 
     ///////////////////////////////////////////////////
     ////////// Products/Services
-    public static int readUpdateProductServiceOption() {
+    public static String readUpdateProductServiceOption() {
         Messages.updateProductOptions();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
     public static String readProductServiceId() {
@@ -62,7 +62,7 @@ public class ScannerReader {
         return removeSpaces(SC.nextLine());
     }
 
-    public static String readProducServiceName() {
+    public static String readProductServiceName() {
         Messages.requestProductServiceName();
         return removeSpaces(SC.nextLine());
     }

@@ -5,7 +5,9 @@ import Complements.ScannerReader;
 import Complements.Validations;
 import Controllers.ClientController;
 import Controllers.ProductController;
+import Controllers.ServiceController;
 import Models.ProductDao;
+import Models.ServiceDao;
 
 public class Menu {
     public static void principalMenu() {
@@ -25,13 +27,13 @@ public class Menu {
                         deleteMenu();
                         break;
                     case "4":
-                        System.out.println("==============================");     
+                        System.out.println("==============================");
                         System.out.println("Facturacion Pendiente");
                         break;
                     case "5":
                         if (Validations.endProgram()) {
                             result = false;
-                            System.out.println("=============================="); 
+                            System.out.println("==============================");
                             System.out.println("Byeeee");
                         }
                         break;
@@ -63,6 +65,8 @@ public class Menu {
                         break;
                     case "3":
                         System.out.println("Servicios");
+                        ServiceController.addServiceControlled();
+                        ServiceDao.print();
                         break;
                     case "4":
                         if (!Validations.continueAdd("")) {
@@ -94,9 +98,15 @@ public class Menu {
                         break;
                     case "2":
                         System.out.println("Productos");
+                        ProductDao.print();
+                        ProductController.updateProductControlled();
+                        ProductDao.print();
                         break;
                     case "3":
                         System.out.println("Servicios");
+                        ServiceDao.print();
+                        ServiceController.updateServiceControlled();
+                        ServiceDao.print();
                         break;
                     case "4":
                         if (!Validations.continueUpdate("")) {
@@ -133,6 +143,9 @@ public class Menu {
                         break;
                     case "3":
                         System.out.println("Servicios");
+                        ServiceDao.print();
+                        ServiceController.deleteServiceControlled();
+                        ServiceDao.print();
                         break;
                     case "4":
                         if (!Validations.continueDelete("")) {

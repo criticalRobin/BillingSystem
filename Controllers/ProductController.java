@@ -25,7 +25,7 @@ public class ProductController {
         } while (!result);
 
         do {
-            name = ScannerReader.readProducServiceName();
+            name = ScannerReader.readProductServiceName();
             if (!Validations.validateProductName(name)) {
                 Messages.wrongNameProduct();
                 return false;
