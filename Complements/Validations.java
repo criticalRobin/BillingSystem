@@ -216,4 +216,24 @@ public class Validations {
         return result;
     }
 
+
+    public static boolean validatePriceWhole(String price) {
+        if (price.matches("^\\d+$")) {
+            return true;
+        } else {
+            Messages.invalidPrice();;
+        }
+        return false;
+    }
+
+    //Validar magnitudes
+    public static boolean validateExtent(String extent) {
+        if (extent.matches("^[a-zA-Z]{2}$")) {
+            return true;
+        } else {
+            Messages.wrongExtent();
+        }
+        return false;
+    }
+
 }

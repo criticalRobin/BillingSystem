@@ -16,6 +16,11 @@ public class Messages {
         System.out.println("Tenga un buen dia hasta la proxima");
     }
 
+
+    public static void invalidPrice() {
+        System.out.println("Precio invalido");
+    }
+
     /////////////////////////////////////////////////
     // Client
     public static void clientList() {
@@ -155,6 +160,11 @@ public class Messages {
 
     public static void messageEmptyRUC() {
         System.out.println("Campo RUC vacio");
+    }
+
+    //Medida
+    public static void wrongExtent() {
+        System.out.println("Magnitud no valida");
     }
 
     // producto
