@@ -11,42 +11,42 @@ public class ScannerReader {
     // Clients
     public static String readUpdateClient() {
         Messages.updateClientOptions();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readTypeID() {
         Messages.requestTypeId();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readName() {
         Messages.requestName();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readID() {
         Messages.requestId();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readLastName() {
         Messages.requestSurname();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readEmail() {
         Messages.requestEmail();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readAddress() {
         Messages.requestAddress();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readPhoneNumber() {
         Messages.requestPhone();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
     }
     //////////////////////////////////////////////////////////
 
@@ -59,17 +59,17 @@ public class ScannerReader {
 
     public static String readProductServiceId() {
         Messages.requestProductServiceId();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     public static String readProducServiceName() {
         Messages.requestProductServiceName();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     public static double readProductServicePriceByUnit() {
         Messages.requestProductServicePriceByUnit();
-        return SC.nextDouble();
+        return  SC.nextDouble();
     }
 
     public static double readProductServiceIva() {
@@ -79,13 +79,13 @@ public class ScannerReader {
 
     public static String readUmeasure() {
         Messages.requestProductUmeasure();
-        return SC.nextLine();
-    }
+        return  removeSpaces(SC.nextLine());
+   }
     ///////////////////////////////////
 
     public static String continueUpdate() {
         Messages.continueUpdate();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     //////////////////////////////////////////////////////////
@@ -94,21 +94,25 @@ public class ScannerReader {
     ////////// Menu
     public static String readOptionFromMenu() {
         Messages.menuOptions();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromAddMenu() {
         Messages.addMenu();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromUpdateMenu() {
         Messages.updateMenu();
-        return SC.nextLine();
+        return  removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromDeleteMenu() {
         Messages.deleteMenu();
-        return SC.nextLine();
+        return removeSpaces(SC.nextLine());
+    }
+
+    public static String removeSpaces(String input) {
+        return input.trim();
     }
 }
