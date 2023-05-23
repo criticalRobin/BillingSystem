@@ -29,16 +29,18 @@ public class ClientDao {
                         String option = ScannerReader.readUpdateClient();
                         switch (option) {
                             case "1":
-                                String newName = ScannerReader.readName();
+                                String newName = ScannerReader.readName().toUpperCase();
                                 if (Validations.validateName(newName)) {
                                     client.setNames(newName);
+                                    System.out.println(client.getNames());
                                     Messages.modificateCliente();
                                 }
                                 break;
                             case "2":
-                                String newLastName = ScannerReader.readLastName();
+                                String newLastName = ScannerReader.readLastName().toUpperCase();
                                 if (Validations.validateLastName(newLastName)) {
                                     client.setLastnames(newLastName);
+                                    System.out.println(client.getLastnames());
                                     Messages.modificateCliente();
                                 }
                                 break;
@@ -46,6 +48,7 @@ public class ClientDao {
                                 String newAddress = ScannerReader.readAddress();
                                 if (Validations.validateAddress(newAddress)) {
                                     client.setAddress(newAddress);
+                                    System.out.println(client.getAddress());
                                     Messages.modificateCliente();
                                 }
                                 break;
@@ -53,6 +56,7 @@ public class ClientDao {
                                 String newEmail = ScannerReader.readEmail();
                                 if (Validations.validateEmail(newEmail)) {
                                     client.setEmail(newEmail);
+                                    System.out.println(client.getEmail());
                                     Messages.modificateCliente();
                                 }
                                 break;
@@ -60,6 +64,7 @@ public class ClientDao {
                                 String newPhone = ScannerReader.readPhoneNumber();
                                 if (Validations.validatePhoneNumber(newPhone)) {
                                     client.setPhoneNumber(newPhone);
+                                    System.out.println(client.getPhoneNumber());
                                     Messages.modificateCliente();
                                 }
                                 break;
@@ -92,7 +97,7 @@ public class ClientDao {
         }
     }
 
-    public String toString() {
+    public static String printlist() {
         String lista = "";
         String support = "";
         for (int i = 0; i < clients.size(); i++) {
