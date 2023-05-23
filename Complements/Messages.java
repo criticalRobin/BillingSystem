@@ -1,5 +1,8 @@
 package Complements;
 
+import Controllers.ClientController;
+import Models.ClientDao;
+
 public class Messages {
 
     /////////////////////////////////////////////////
@@ -16,6 +19,11 @@ public class Messages {
 
     /////////////////////////////////////////////////
     // Client
+    public static void clientList() {
+        System.out.print();
+    }
+
+
     public static void updateProductClient() {
         System.out.print("1.Registar Cliente \n 2.Modificar Cliente \n4.Borrar Cliente \nIngresa tu opcion: ");
     }
