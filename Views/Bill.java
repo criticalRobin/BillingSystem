@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Queue;
 import Models.Client;
+import Models.Product;
+import Models.Service;
 
 
 
@@ -22,7 +24,22 @@ public class Bill {
     }
 
     //metodo provisional de calcular precio
-   
+    public boolean calculateTotal(Queue <Product> p, Queue <Service> s){
+        if(p.isEmpty() || s.isEmpty()){
+            return false;
+            //mensaje de no hay productos y no hay servicios a facturar.
+        }
+        if(!p.isEmpty()){
+            for(Product products : p){
+              p.peek();  
+
+            }
+
+
+        }
+        return true;
+
+    }
     public void impression(Client c) {
         
         // impresion si tiene cedula
