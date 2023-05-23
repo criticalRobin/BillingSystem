@@ -10,6 +10,7 @@ import Models.ProductDao;
 public class Menu {
     public static void principalMenu() {
         try {
+            boolean result = true;
             String principalMenu;
             do {
                 principalMenu = ScannerReader.readOptionFromMenu();
@@ -27,13 +28,16 @@ public class Menu {
                         System.out.println("Facturacion Pendiente");
                         break;
                     case "5":
-                        System.out.println("Byeeee");
+                        if (Validations.endProgram()) {
+                            result = false;
+                            System.out.println("Byeeee");
+                        }
                         break;
                     default:
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (Validations.continueUpdate());
+            } while (result);
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -42,6 +46,7 @@ public class Menu {
     public static void addMenu() {
         try {
             String preMenu;
+            boolean result = true;
             do {
                 preMenu = ScannerReader.readOptionFromAddMenu();
                 switch (preMenu) {
@@ -58,13 +63,16 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        System.out.println("Byeeeee");
+                        if (Validations.continueAdd("")) {
+                            result = false;
+                            System.out.println("Byeeee");
+                        }
                         break;
                     default:
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (Validations.continueUpdate());
+            } while (result);
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -73,6 +81,7 @@ public class Menu {
     public static void updateMenu() {
         try {
             String preMenu;
+            boolean result = true;
             do {
                 preMenu = ScannerReader.readOptionFromUpdateMenu();
                 switch (preMenu) {
@@ -88,13 +97,16 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        System.out.println("Byeeeee");
+                        if (Validations.continueUpdate("")) {
+                            result = false;
+                            System.out.println("Byeeee");
+                        }
                         break;
                     default:
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (Validations.continueUpdate());
+            } while (result);
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -103,6 +115,7 @@ public class Menu {
     public static void deleteMenu() {
         try {
             String preMenu;
+            boolean result = true;
             do {
                 preMenu = ScannerReader.readOptionFromDeleteMenu();
                 switch (preMenu) {
@@ -120,13 +133,16 @@ public class Menu {
                         System.out.println("Servicios");
                         break;
                     case "4":
-                        System.out.println("Byeeeee");
+                        if (Validations.continueDelete("")) {
+                            result = false;
+                            System.out.println("Byeeee");
+                        }
                         break;
                     default:
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (Validations.continueUpdate());
+            } while (result);
         } catch (Exception e) {
             Messages.errorMessage();
         }
