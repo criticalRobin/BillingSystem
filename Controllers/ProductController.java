@@ -54,17 +54,6 @@ public class ProductController {
                 result = true;
             }
         } while (!result);
-
-        // do {
-        // String inputIva = ScannerReader.readProductServiceIva();
-        // if (!Validations.validateIVA(inputIva)) {
-        // Messages.wrongIVA();
-        // return false;
-        // } else {
-        // iva = Double.parseDouble(inputIva);
-        // result = true;
-        // }
-        // } while (!result);
         iva = selectIva();
         ProductDao.registerProduct(id, name, priceByUnit, uMeasure, iva);
         Messages.productAdded();
@@ -91,20 +80,24 @@ public class ProductController {
     public static double selectIva() {
         double iva = 0;
         int ivaOption;
+        boolean result = true;
         do {
             ivaOption = ScannerReader.readIvaOption();
             switch (ivaOption) {
                 case 1:
                     iva = 0.0;
+                    result = true;
                     break;
                 case 2:
                     iva = 12.0;
+                    result = true;
                     break;
                 default:
                     Messages.wrongIVA();
+                    result = false;
                     break;
             }
-        } while (ivaOption != 1 || ivaOption != 2);
+        } while (!result);
         return iva;
     }
 
