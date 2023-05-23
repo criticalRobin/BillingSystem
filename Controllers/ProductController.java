@@ -3,7 +3,6 @@ package Controllers;
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
-import Models.ClientDao;
 import Models.ProductDao;
 
 public class ProductController {
@@ -56,17 +55,17 @@ public class ProductController {
             }
         } while (!result);
 
-        do {
-            String inputIva = ScannerReader.readProductServiceIva();
-            if (!Validations.validateIVA(inputIva)) {
-                Messages.wrongIVA();
-                return false;
-            } else {
-                iva = Double.parseDouble(inputIva);
-                result = true;
-            }
-        } while (!result);
-
+        // do {
+        // String inputIva = ScannerReader.readProductServiceIva();
+        // if (!Validations.validateIVA(inputIva)) {
+        // Messages.wrongIVA();
+        // return false;
+        // } else {
+        // iva = Double.parseDouble(inputIva);
+        // result = true;
+        // }
+        // } while (!result);
+        iva = selectIva();
         ProductDao.registerProduct(id, name, priceByUnit, uMeasure, iva);
         Messages.productAdded();
         return result;
@@ -84,9 +83,29 @@ public class ProductController {
     public static boolean deleteProductControlled() {
         String id = ScannerReader.readProductServiceId();
         if (Validations.validateIdentifier(id)) {
-            ClientDao.deleteClient(id);
+            ProductDao.deleteProduct(id);
         }
         return false;
+    }
+
+    public static double selectIva() {
+        double iva = 0;
+        int ivaOption;
+        do {
+            ivaOption = ScannerReader.readIvaOption();
+            switch (ivaOption) {
+                case 1:
+                    iva = 0.0;
+                    break;
+                case 2:
+                    iva = 12.0;
+                    break;
+                default:
+                    Messages.wrongIVA();
+                    break;
+            }
+        } while (ivaOption != 1 || ivaOption != 2);
+        return iva;
     }
 
 }

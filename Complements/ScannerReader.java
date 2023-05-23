@@ -81,6 +81,11 @@ public class ScannerReader {
         Messages.requestProductUmeasure();
         return removeSpaces(SC.nextLine());
     }
+
+    public static int readIvaOption() {
+        Messages.requestIvaOption();
+        return SC.nextInt();
+    }
     ///////////////////////////////////
 
     public static String continueUpdate(String data) {
@@ -98,7 +103,7 @@ public class ScannerReader {
         return removeSpaces(SC.nextLine());
     }
 
-    public static String endProgram(){
+    public static String endProgram() {
         Messages.endProgram();
         return removeSpaces(SC.nextLine());
     }
