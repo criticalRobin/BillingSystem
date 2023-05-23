@@ -31,7 +31,7 @@ public class ClientController {
                     result = false;
                 else
                     result = true;
-            else if (typeId.equals("2")){
+            else if (typeId.equals("2")) {
                 if (!Validations.validateRUC(id))
                     result = false;
                 else

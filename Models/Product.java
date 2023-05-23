@@ -6,6 +6,7 @@ public class Product {
     private double priceByUnit;
     private String uMeasure;
     private double iva;
+    private int quantity;
 
     public Product() {
     }
@@ -57,4 +58,13 @@ public class Product {
     public void setIva(double iva) {
         this.iva = iva;
     }
+
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+
+    public int getQuantity(){
+        return this.quantity;
+    }
+
 }

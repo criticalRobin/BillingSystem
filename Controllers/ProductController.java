@@ -3,11 +3,12 @@ package Controllers;
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
+import Models.ClientDao;
 import Models.ProductDao;
 
 public class ProductController {
     public static boolean addProductControlled() {
-        boolean result = false;
+        boolean result = true;
         String id;
         String name;
         double priceByUnit;
@@ -18,42 +19,53 @@ public class ProductController {
             id = ScannerReader.readProductServiceId();
             if (!Validations.validateIdentifier(id)) {
                 Messages.wrongIDProduct();
+                result = false;
             } else {
                 result = true;
             }
-        } while (result);
+        } while (!result);
 
         do {
             name = ScannerReader.readProducServiceName();
             if (!Validations.validateProductName(name)) {
                 Messages.wrongNameProduct();
+                return false;
             } else {
                 result = true;
             }
-        } while (result);
+        } while (!result);
 
         do {
-            priceByUnit = ScannerReader.readProductServicePriceByUnit();
-            if (!Validations.validatePrice(Double.toString(priceByUnit))) {
+            String price = ScannerReader.readProductServicePriceByUnit();
+            if (!Validations.validatePrice(price)) {
                 Messages.wrongPriceProduct();
+                return false;
             } else {
+                priceByUnit = Double.parseDouble(price);
                 result = true;
             }
-        } while (result);
+        } while (!result);
 
         do {
             uMeasure = ScannerReader.readUmeasure();
-            result = true;
-        } while (result);
-
-        do {
-            iva = ScannerReader.readProductServiceIva();
-            if (!Validations.validateIVA(Double.toString(iva))) {
-                Messages.wrongIVA();
+            if (!Validations.validateExtent(uMeasure)) {
+                Messages.wrongExtent();
+                return false;
             } else {
                 result = true;
             }
-        } while (result);
+        } while (!result);
+
+        do {
+            String inputIva = ScannerReader.readProductServiceIva();
+            if (!Validations.validateIVA(inputIva)) {
+                Messages.wrongIVA();
+                return false;
+            } else {
+                iva = Double.parseDouble(inputIva);
+                result = true;
+            }
+        } while (!result);
 
         ProductDao.registerProduct(id, name, priceByUnit, uMeasure, iva);
         Messages.productAdded();
@@ -66,7 +78,15 @@ public class ProductController {
             ProductDao.updateProductInfo(id);
             return true;
         }
-        // esto puse solo para guardar
-        return true;
+        return false;
     }
+
+    public static boolean deleteProductControlled() {
+        String id = ScannerReader.readProductServiceId();
+        if (Validations.validateIdentifier(id)) {
+            ClientDao.deleteClient(id);
+        }
+        return false;
+    }
+
 }

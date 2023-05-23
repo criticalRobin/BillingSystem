@@ -4,6 +4,8 @@ import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
 import Controllers.ClientController;
+import Controllers.ProductController;
+import Models.ProductDao;
 
 public class Menu {
     public static void principalMenu() {
@@ -49,6 +51,8 @@ public class Menu {
                         break;
                     case "2":
                         System.out.println("Productos");
+                        ProductController.addProductControlled();
+                        ProductDao.print();
                         break;
                     case "3":
                         System.out.println("Servicios");
@@ -108,6 +112,9 @@ public class Menu {
                         break;
                     case "2":
                         System.out.println("Productos");
+                        ProductDao.print();
+                        ProductController.deleteProductControlled();
+                        ProductDao.print();
                         break;
                     case "3":
                         System.out.println("Servicios");

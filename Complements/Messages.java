@@ -83,6 +83,14 @@ public class Messages {
         System.out.print("Ha eliminado al cliente");
     }
 
+    public static void eliminateService() {
+        System.out.print("Ha eliminado al servicio");
+    }
+
+    public static void eliminateProduct() {
+        System.out.print("Ha eliminado al producto");
+    }
+
     public static void modificateCliente() {
         System.out.print("Ha modificado al cliente");
     }
@@ -244,10 +252,6 @@ public class Messages {
 
     public static void registerService() {
         System.out.print("Ha registrado un servicio: ");
-    }
-
-    public static void eliminateService() {
-        System.out.print("Ha eliminado un servicio: ");
     }
 
     public static void modificateService() {

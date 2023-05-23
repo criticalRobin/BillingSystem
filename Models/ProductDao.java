@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import Complements.Messages;
 import Complements.ScannerReader;
+import Complements.Validations;
 
 public class ProductDao {
     static List<Product> products = new LinkedList<>();
@@ -14,8 +15,8 @@ public class ProductDao {
             return true;
         } catch (NullPointerException ex) {
             Messages.errorMessage();
-            return false;
         }
+        return false;
     }
 
     public static boolean updateProductInfo(String id) {
@@ -26,13 +27,17 @@ public class ProductDao {
                     switch (option) {
                         case 1:
                             String newName = ScannerReader.readProducServiceName();
-                            pro.setName(newName);
-                            Messages.updateProductClient();
+                            if (Validations.validateProductName(newName)) {
+                                pro.setName(newName);
+                                Messages.updateProductClient();
+                            }
                             break;
                         case 2:
-                            double newPrice = ScannerReader.readProductServicePriceByUnit();
-                            pro.setPriceByUnit(newPrice);
-                            Messages.updateProductClient();
+                            String newPrice = ScannerReader.readProductServicePriceByUnit();
+                            if (Validations.validatePrice(newPrice)) {
+                                pro.setPriceByUnit(Double.parseDouble(newPrice));
+                                Messages.updateProductClient();
+                            }
                             break;
                         default:
                             Messages.switchDefaultMessage();
@@ -52,12 +57,19 @@ public class ProductDao {
             for (Product pro : products) {
                 if (pro.getId().equals(id)) {
                     products.remove(pro);
+                    Messages.eliminateProduct();
                 }
             }
             return true;
         } catch (NullPointerException ex) {
             Messages.errorMessage();
             return false;
+        }
+    }
+
+    public static void print() {
+        for (Product pro : products) {
+            System.out.println("[" + pro.getName() + " - " + pro.getId() + "]");
         }
     }
 }

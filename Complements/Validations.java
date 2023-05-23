@@ -192,7 +192,7 @@ public class Validations {
             return true;
         } else {
             // mensaje price no valido
-        Messages.wrongIVA();
+            Messages.wrongIVA();
         }
         return false;
     }
@@ -207,7 +207,7 @@ public class Validations {
                 return true;
             } else if (confirm.equals("N")) {
                 return false;
-                
+
             } else {
                 Messages.switchDefaultMessage();
                 result = false;
@@ -216,17 +216,17 @@ public class Validations {
         return result;
     }
 
-
     public static boolean validatePriceWhole(String price) {
         if (price.matches("^\\d+$")) {
             return true;
         } else {
-            Messages.invalidPrice();;
+            Messages.invalidPrice();
+            ;
         }
         return false;
     }
 
-    //Validar magnitudes
+    // Validar magnitudes
     public static boolean validateExtent(String extent) {
         if (extent.matches("^[a-zA-Z]{2}$")) {
             return true;
