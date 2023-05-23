@@ -67,7 +67,7 @@ public class ClientDao {
                                 Messages.switchDefaultMessage();
                                 break;
                         }
-                    } while (Validations.continueUpdate());
+                    } while (Validations.continueUpdate("Clientes"));
                 }
             }
             return true;

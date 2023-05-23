@@ -199,10 +199,10 @@ public class Validations {
 
     /////////////////////////// Validacion continuar
     // continuar con la modificacion
-    public static boolean continueUpdate() {
-        boolean result = false;
+    public static boolean continueUpdate(String data) {
+        boolean result = true;
         do {
-            String confirm = ScannerReader.continueUpdate().toUpperCase();
+            String confirm = ScannerReader.continueUpdate(data).toUpperCase();
             if (confirm.equals("Y")) {
                 return true;
             } else if (confirm.equals("N")) {
@@ -216,6 +216,57 @@ public class Validations {
         return result;
     }
 
+    public static boolean continueAdd(String data) {
+        boolean result = true;
+        do {
+            String confirm = ScannerReader.continueAdd(data).toUpperCase();
+            if (confirm.equals("Y")) {
+                return true;
+            } else if (confirm.equals("N")) {
+                return false;
+
+            } else {
+                Messages.switchDefaultMessage();
+                result = false;
+            }
+        } while (!result);
+        return result;
+    }
+
+    public static boolean continueDelete(String data) {
+        boolean result = true;
+        do {
+            String confirm = ScannerReader.continueDelete(data).toUpperCase();
+            if (confirm.equals("Y")) {
+                return true;
+            } else if (confirm.equals("N")) {
+                return false;
+
+            } else {
+                Messages.switchDefaultMessage();
+                result = false;
+            }
+        } while (!result);
+        return result;
+    }
+
+    public static boolean endProgram() {
+        boolean result = true;
+        do {
+            String confirm = ScannerReader.endProgram().toUpperCase();
+            if (confirm.equals("Y")) {
+                return true;
+            } else if (confirm.equals("N")) {
+                return false;
+
+            } else {
+                Messages.switchDefaultMessage();
+                result = false;
+            }
+        } while (!result);
+        return result;
+    }
+    ////////////////////////////////
     public static boolean validatePriceWhole(String price) {
         if (price.matches("^\\d+$")) {
             return true;

@@ -16,7 +16,6 @@ public class Messages {
         System.out.println("Tenga un buen dia hasta la proxima");
     }
 
-
     public static void invalidPrice() {
         System.out.println("Precio invalido");
     }
@@ -26,7 +25,6 @@ public class Messages {
     public static void clientList() {
         System.out.print(ClientDao.clients.toString());
     }
-
 
     public static void updateProductClient() {
         System.out.print("1.Registar Cliente \n 2.Modificar Cliente \n4.Borrar Cliente \nIngresa tu opcion: ");
@@ -93,10 +91,6 @@ public class Messages {
 
     public static void modificateCliente() {
         System.out.print("Ha modificado al cliente");
-    }
-
-    public static void continueUpdate() {
-        System.out.println("Desea continuar con la modificación Y/N");
     }
 
     ///////////////////////////////////////////////////////////
@@ -170,7 +164,7 @@ public class Messages {
         System.out.println("Campo RUC vacio");
     }
 
-    //Medida
+    // Medida
     public static void wrongExtent() {
         System.out.println("Magnitud no valida");
     }
@@ -293,12 +287,27 @@ public class Messages {
     }
     /////////////////////////////////////////////////
 
-
-    //Para bill
+    // Para bill
     public static void noProductsAndServices() {
         System.out.print("No hay productos o servicios preparados para ser facturados");
     }
 
-    
+    /////////////////////////////////////////////////
 
+    // Continuaciones
+    public static void continueUpdate(String data) {
+        System.out.println("Desea continuar modificando " + data + "? Y/N");
+    }
+
+    public static void continueAdd(String data) {
+        System.out.println("Desea continuar agregando " + data + "? Y/N");
+    }
+
+    public static void continueDelete(String data) {
+        System.out.println("Desea continuar eliminando " + data + "? Y/N");
+    }
+
+    public static void endProgram() {
+        System.out.println("Desea salir del programa? Y/N");
+    }
 }

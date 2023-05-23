@@ -83,8 +83,23 @@ public class ScannerReader {
     }
     ///////////////////////////////////
 
-    public static String continueUpdate() {
-        Messages.continueUpdate();
+    public static String continueUpdate(String data) {
+        Messages.continueUpdate(data);
+        return removeSpaces(SC.nextLine());
+    }
+
+    public static String continueAdd(String data) {
+        Messages.continueAdd(data);
+        return removeSpaces(SC.nextLine());
+    }
+
+    public static String continueDelete(String data) {
+        Messages.continueDelete(data);
+        return removeSpaces(SC.nextLine());
+    }
+
+    public static String endProgram(){
+        Messages.endProgram();
         return removeSpaces(SC.nextLine());
     }
 
