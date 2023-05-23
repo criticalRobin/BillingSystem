@@ -3,6 +3,7 @@ package Controllers;
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
+import Models.ClientDao;
 import Models.ProductDao;
 
 public class ProductController {
@@ -79,4 +80,13 @@ public class ProductController {
         }
         return false;
     }
+
+    public static boolean deleteProductControlled() {
+        String id = ScannerReader.readProductServiceId();
+        if (Validations.validateIdentifier(id)) {
+            ClientDao.deleteClient(id);
+        }
+        return false;
+    }
+
 }
