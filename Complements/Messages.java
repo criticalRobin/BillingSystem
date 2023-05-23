@@ -23,7 +23,7 @@ public class Messages {
     /////////////////////////////////////////////////
     // Client
     public static void clientList() {
-        System.out.print(ClientDao.clients.toString());
+        System.out.print(ClientDao.printlist());
     }
 
     public static void updateProductClient() {
@@ -32,7 +32,7 @@ public class Messages {
 
     public static void updateClientOptions() {
         System.out.print(
-                "1.Nombres \n2.Apellidos \n3.Dirección \n4.Correo Electrónico \n5.Telefono \nIngresa tu opcion: ");
+                "Qué desea modificar:\n1.Nombres \n2.Apellidos \n3.Dirección \n4.Correo Electrónico \n5.Telefono \nIngresa tu opcion: ");
     }
 
     // sirve para pedir el nombre
