@@ -1,7 +1,6 @@
 package Views;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.Queue;
 import Models.Client;
@@ -23,7 +22,7 @@ public class Bill {
 
     public static void main(String[] args) {
         Bill b = new Bill(
-                new Client("David", "Ayme", "1805271937", "2", "En tu corazón", "0998643300", "dayme1937@uta.ec"));
+                new Client("David", "Ayme", "1805271937", "1", "En tu corazón", "0998643300", "dayme1937@uta.ec"));
         b.header();
         b.calculateTotal();
     }
@@ -115,8 +114,8 @@ public class Bill {
 
         if (this.c.getTypeId().equals("1")) {
             System.out.println("********************************Factura**********************************");
-            System.out.printf("Cliente: %s\t\tCédula: %s\n" +
-                    "Correo Electrónico: %s\t\tCelular: %s\n"
+            System.out.printf("Cliente: %s\t\t\tCédula: %s\n" +
+                    "Correo Electrónico: %s\tCelular: %s\n"
                     + "Dirección: %s\t\tFecha: %s\n\n", this.c.getLastnames() + " " + this.c.getNames(), this.c.getId(),
                     this.c.getEmail(),
                     this.c.getPhoneNumber(), this.c.getAddress(), LocalDate.now());
