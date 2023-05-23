@@ -2,59 +2,90 @@ package Views;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.LinkedList;
 import java.util.Queue;
 import Models.Client;
 import Models.Product;
 import Models.Service;
 
-
-
-
 public class Bill {
-    Product p;
-    LocalDate date;
-    LocalTime hour;
+    Queue<Product> products;
+    Queue<Service> services;
+    Client c;
+    // LocalDate date;
+    // LocalTime hour;
     int subtotal;
     int total;
 
-    // metodo provisional
-    public static void main(String[] args) {
-        Bill b = new Bill();
-        b.impression(new Client("Alex", "Ayme", "1805271937", "1", "En tu corazon", "0980912722", "dayme1983@"));
+    public Bill(Client client) {
+        this.c = client;
+        this.products = new LinkedList<>();
+        this.services = new LinkedList<>();
+
     }
 
-    //metodo provisional de calcular precio
-    public boolean calculateTotal(Queue <Product> p, Queue <Service> s){
-        if(p.isEmpty() || s.isEmpty()){
+    public static void main(String[] args) {
+        Bill b = new Bill(
+                new Client("David", "Ayme", "1805271937", "2", "En tu corazón", "0998643300", "dayme1937@uta.ec"));
+        b.header();
+        b.calculateTotal();
+    }
+    public void printProducts(Product p, double total){
+        System.out.printf("%-10s | %-20s | %-10s | %-10s\n\n", p.getQuantity(), p.getName(), p.getPriceByUnit(), total);
+    }
+
+    // metodo provisional de calcular precio
+    public boolean calculateTotal() {
+        double totalTemp = 0;
+        double totalWithIVA = 0; 
+        double totalWithoutIVA = 0;
+        if (products.isEmpty() && services.isEmpty()) {
+            //mensaje de que no hay productos ni servicios
             return false;
-            //mensaje de no hay productos y no hay servicios a facturar.
         }
-        if(!p.isEmpty()){
-            for(Product products : p){
-              p.peek();  
-
+        //para productos
+        if(!products.isEmpty()){
+           for (Product product : products) {
+            if(product.getIva() == 12.0){
+                totalTemp = (product.getQuantity()*product.getPriceByUnit())*((product.getIva()/100.0)+1);
+                this.printProducts(product, totalTemp);
+                totalWithIVA = totalWithIVA + totalTemp;
+            }else{
+                totalTemp = (product.getQuantity()*product.getPriceByUnit());
+                this.printProducts(product, totalTemp);
+                totalWithoutIVA = totalWithoutIVA + totalTemp;
             }
-
+            totalTemp = 0;
+            System.out.printf("%-10s | %-20s | %-10s | %-10s", "----------", "--------------------",
+            "----------", "----------\n");
+           } 
 
         }
+
+        if(ser)
+        
         return true;
 
     }
-    public void impression(Client c) {
-        
-        // impresion si tiene cedula
-        if (c.getTypeId() == "1") {
+    //ENCABEZADO DE LA FACTURA
+    public void header() {
+
+        if (this.c.getTypeId().equals("1")) {
             System.out.println("********************************Factura**********************************");
-            System.out.printf("Cliente: %s\t\t\tCédula: %s\n" +
+            System.out.printf("Cliente: %s\t\tCédula: %s\n" +
                     "Correo Electrónico: %s\t\tCelular: %s\n"
-                    + "Dirección: %s\t\tFecha: %s\n\n", c.getLastnames() + " " + c.getNames(), c.getId(), c.getEmail(),
-                    c.getPhoneNumber(), c.getAddress(), date.now());
-            System.out.printf("%-10s | %-20s | %-10s | %-10s\n", "Cantidad", "Producto/Servicio", "Precio U.", "Total");
-            // los productos
-            System.out.println("un producto");
-            System.out.printf("%-10s | %-20s | %-10s | %-10s", "----------", "--------------------",
-                    "----------", "----------\n");
-            System.out.printf("\t\t\tsubtotal");
+                    + "Dirección: %s\t\tFecha: %s\n\n", this.c.getLastnames() + " " + this.c.getNames(), this.c.getId(),
+                    this.c.getEmail(),
+                    this.c.getPhoneNumber(), this.c.getAddress(), LocalDate.now());
+
+        } else {
+            System.out.println("********************************Factura**********************************");
+            System.out.printf("Cliente: %s\t\t\tRUC: %s\n" +
+                    "Correo Electrónico: %s\tCelular: %s\n"
+                    + "Dirección: %s\t\tFecha: %s\n\n", this.c.getLastnames() + " " + this.c.getNames(), this.c.getId(),
+                    this.c.getEmail(),
+                    this.c.getPhoneNumber(), this.c.getAddress(), LocalDate.now());
+
         }
 
     }
