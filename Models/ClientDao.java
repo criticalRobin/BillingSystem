@@ -7,7 +7,7 @@ import Complements.ScannerReader;
 import Complements.Validations;
 
 public class ClientDao {
-    static List<Client> clients = new LinkedList<>();
+    public static List<Client> clients = new LinkedList<>();
 
     // inserta a un cliente a la lista
     public static boolean insertClient(String names, String lastnames, String id, int typeId, String address,
@@ -91,4 +91,5 @@ public class ClientDao {
             return false;
         }
     }
+
 }
