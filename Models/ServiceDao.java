@@ -7,9 +7,9 @@ import Complements.Messages;
 import Complements.ScannerReader;
 
 public class ServiceDao {
-    List<Service> services = new LinkedList<>();
+    static List<Service> services = new LinkedList<>();
 
-    public boolean registerService(String id, String name, double priceByUnit, double iva) {
+    public static boolean registerService(String id, String name, double priceByUnit, double iva) {
         try {
             services.add(new Service(id, name, priceByUnit, iva));
             return true;
@@ -19,17 +19,17 @@ public class ServiceDao {
         }
     }
 
-    public boolean updateServiceInfo(String id) {
+    public static boolean updateServiceInfo(String id) {
         try {
             for (Service serv : services) {
                 if (serv.getId().equals(id)) {
-                    int option = ScannerReader.readUpdateProductServiceOption();
+                    String option = ScannerReader.readUpdateProductServiceOption();
                     switch (option) {
-                        case 1:
-                            String newName = ScannerReader.readProducServiceName();
+                        case "1":
+                            String newName = ScannerReader.readProductServiceName();
                             serv.setName(newName);
                             break;
-                        case 2:
+                        case "2":
                             String newPrice = ScannerReader.readProductServicePriceByUnit();
                             serv.setPriceByUnit(Double.parseDouble(newPrice));
                             break;
@@ -46,7 +46,7 @@ public class ServiceDao {
         }
     }
 
-    public boolean deleteService(String id) {
+    public static boolean deleteService(String id) {
         try {
             for (Service serv : services) {
                 if (serv.getId().equals(id)) {
@@ -57,6 +57,14 @@ public class ServiceDao {
         } catch (NullPointerException ex) {
             Messages.errorMessage();
             return false;
+        }
+    }
+
+    public static void print() {
+        System.out.println("Nombre/Precio/Iva/Id");
+        for (Service ser : services) {
+            System.out.println("[" + ser.getName() + " - " + ser.getPriceByUnit() + " - " + ser.getIva() + " - "
+                    + ser.getId() + "]");
         }
     }
 }

@@ -23,16 +23,16 @@ public class ProductDao {
         try {
             for (Product pro : products) {
                 if (pro.getId().equals(id)) {
-                    int option = ScannerReader.readUpdateProductServiceOption();
+                    String option = ScannerReader.readUpdateProductServiceOption();
                     switch (option) {
-                        case 1:
-                            String newName = ScannerReader.readProducServiceName();
+                        case "1":
+                            String newName = ScannerReader.readProductServiceName();
                             if (Validations.validateProductName(newName)) {
                                 pro.setName(newName);
                                 Messages.updateProductClient();
                             }
                             break;
-                        case 2:
+                        case "2":
                             String newPrice = ScannerReader.readProductServicePriceByUnit();
                             if (Validations.validatePrice(newPrice)) {
                                 pro.setPriceByUnit(Double.parseDouble(newPrice));
