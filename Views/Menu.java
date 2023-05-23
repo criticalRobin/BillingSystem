@@ -112,6 +112,9 @@ public class Menu {
                         break;
                     case "2":
                         System.out.println("Productos");
+                        ProductDao.print();
+                        ProductController.deleteProductControlled();
+                        ProductDao.print();
                         break;
                     case "3":
                         System.out.println("Servicios");

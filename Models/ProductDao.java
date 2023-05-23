@@ -57,6 +57,7 @@ public class ProductDao {
             for (Product pro : products) {
                 if (pro.getId().equals(id)) {
                     products.remove(pro);
+                    Messages.eliminateProduct();
                 }
             }
             return true;
