@@ -207,6 +207,7 @@ public class Validations {
                 return true;
             } else if (confirm.equals("N")) {
                 return false;
+                
             } else {
                 Messages.switchDefaultMessage();
                 result = false;

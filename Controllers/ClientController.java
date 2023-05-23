@@ -26,12 +26,12 @@ public class ClientController {
 
         do {
             id = ScannerReader.readID();
-            if (typeId == "1")
+            if (typeId.equals("1"))
                 if (!Validations.validateID(id))
                     result = false;
                 else
                     result = true;
-            else {
+            else if (typeId.equals("2")){
                 if (!Validations.validateRUC(id))
                     result = false;
                 else
@@ -79,7 +79,7 @@ public class ClientController {
                 result = true;
         } while (!result);
 
-        ClientDao.insertClient(name, Lastname, Lastname, typeId, address, phone, email);
+        ClientDao.insertClient(name.toUpperCase(), Lastname.toUpperCase(), id, typeId, address, phone, email);
         Messages.registerCliente();
         return result;
     }
