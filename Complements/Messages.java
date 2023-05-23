@@ -1,6 +1,5 @@
 package Complements;
 
-
 public class Messages {
 
     /////////////////////////////////////////////////
@@ -80,12 +79,6 @@ public class Messages {
         System.out.println("Desea continuar con la modificación S/N");
     }
 
-
-
-
-
-
-
     ///////////////////////////////////////////////////////////
     // Errores
     // mensaje general de error
@@ -98,32 +91,32 @@ public class Messages {
         System.out.println("La opcion ingresada no es valida");
     }
 
-    //Nombre
+    // Nombre
     public static void wrongName() {
         System.out.println("El nombre del cliente no es valido");
     }
 
-    //Apellido
+    // Apellido
     public static void wrongLastName() {
         System.out.println("El apellido del cliente no es valido");
     }
 
-    //Direccion
+    // Direccion
     public static void wrongAddress() {
         System.out.println("La dirección del clienteno es valido");
     }
 
-    //Correo
+    // Correo
     public static void wrongEmail() {
         System.out.println("El correo electrónico del cliente no es valido");
     }
 
-    //Telefono
+    // Telefono
     public static void wrongPhoneNumber() {
         System.out.println("El numero de contacto del cliente no es valido");
     }
 
-    //Cedula 
+    // Cedula
     public static void wrongID() {
         System.out.println("Cedula del cliente no es valido");
     }
@@ -135,6 +128,7 @@ public class Messages {
     public static void noNumbersID() {
         System.out.println("El campo cedula solo acepta numeros");
     }
+
     public static void wrongTypeID() {
         System.out.println("El tipo de Id no es valido");
     }
@@ -143,8 +137,7 @@ public class Messages {
         System.out.println("Mensaje Cedula vacio");
     }
 
-
-    //RUC
+    // RUC
     public static void wrongRUC() {
         System.out.println("RUC del cliente no es valido");
     }
@@ -157,7 +150,7 @@ public class Messages {
         System.out.println("Campo RUC vacio");
     }
 
-    //producto
+    // producto
     public static void wrongNameProduct() {
         System.out.println("Nombre del producto no valido");
     }
@@ -170,12 +163,11 @@ public class Messages {
         System.out.println("ID del producto no valido");
     }
 
-
     public static void wrongIVA() {
         System.out.println("IVA no valido");
     }
-    
-    //Servicio
+
+    // Servicio
     public static void wrongNameService() {
         System.out.println("Nombre del servicio no valido");
     }
@@ -187,16 +179,6 @@ public class Messages {
     public static void wrongIDService() {
         System.out.println("ID del servicio no valido");
     }
-
-
-
-
-
-
-
-
-
-
 
     /////////////////////////////////////////////////
     // Productos
@@ -211,18 +193,18 @@ public class Messages {
     }
 
     // Nombre producto
-    public static void requestProductName() {
-        System.out.print("Ingrese el nombre del producto: ");
+    public static void requestProductServiceName() {
+        System.out.print("Ingrese el nombre: ");
     }
 
     // Id producto
-    public static void prodcutId() {
-        System.out.print("Ingrese su Id: ");
+    public static void requestProductServiceId() {
+        System.out.print("Ingrese el Id: ");
     }
 
     // Precio producto
-    public static void requestProductPriceByUnit() {
-        System.out.print("Ingrese el precio del producto: ");
+    public static void requestProductServicePriceByUnit() {
+        System.out.print("Ingrese el precio: ");
     }
 
     // Unidad de medida
@@ -231,26 +213,17 @@ public class Messages {
     }
 
     // IVA
-    public static void IVAproduct() {
-        System.out.print("ingrese el IVA del product: ");
+    public static void requestProductServiceIva() {
+        System.out.print("ingrese el IVA: ");
+    }
+
+    public static void requestProductUmeasure() {
+        System.out.print("Ingrese la unidad de media: ");
     }
 
     /////////////////////////////////////////////////
     // Servicios
     // Opciones de servicios
-    public static void updateServiceOptions() {
-        System.out.print("1.Nombre \n2.Precio Unitario \nIngrese tu opcion: ");
-    }
-
-    // Nombre servicio
-    public static void nameService() {
-        System.out.print("Escribe el nombre servicio: ");
-    }
-
-    // Precio servicio
-    public static void priceService() {
-        System.out.print("Escribe el valor del servicio: ");
-    }
 
     public static void registerService() {
         System.out.print("Ha registrado un servicio: ");

@@ -22,14 +22,14 @@ public class ProductDao {
         try {
             for (Product pro : products) {
                 if (pro.getId().equals(id)) {
-                    int option = ScannerReader.readUpdateProductOption();
+                    int option = ScannerReader.readUpdateProductServiceOption();
                     switch (option) {
                         case 1:
-                            String newName = ScannerReader.readProductName();
+                            String newName = ScannerReader.readProducServiceName();
                             pro.setName(newName);
                             break;
                         case 2:
-                            double newPrice = ScannerReader.readProductPriceByUnit();
+                            double newPrice = ScannerReader.readProductServicePriceByUnit();
                             pro.setPriceByUnit(newPrice);
                             break;
                         default:

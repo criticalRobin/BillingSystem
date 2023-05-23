@@ -14,7 +14,7 @@ public class ScannerReader {
         return SC.nextInt();
     }
 
-    public static int readTypeID(){
+    public static int readTypeID() {
         Messages.requestTypeId();
         return SC.nextInt();
     }
@@ -51,20 +51,35 @@ public class ScannerReader {
     //////////////////////////////////////////////////////////
 
     ///////////////////////////////////////////////////
-    ////////// Products
-    public static int readUpdateProductOption() {
+    ////////// Products/Services
+    public static int readUpdateProductServiceOption() {
         Messages.updateProductOptions();
         return SC.nextInt();
     }
 
-    public static String readProductName() {
-        Messages.requestProductName();
+    public static String readProductServiceId() {
+        Messages.requestProductServiceId();
         return SC.nextLine();
     }
 
-    public static double readProductPriceByUnit() {
-        Messages.requestProductPriceByUnit();
+    public static String readProducServiceName() {
+        Messages.requestProductServiceName();
+        return SC.nextLine();
+    }
+
+    public static double readProductServicePriceByUnit() {
+        Messages.requestProductServicePriceByUnit();
         return SC.nextDouble();
+    }
+
+    public static double readProductServiceIva() {
+        Messages.requestProductServiceIva();
+        return SC.nextDouble();
+    }
+
+    public static String readUmeasure() {
+        Messages.requestProductUmeasure();
+        return SC.nextLine();
     }
     ///////////////////////////////////
 
