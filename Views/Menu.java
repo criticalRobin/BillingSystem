@@ -25,11 +25,13 @@ public class Menu {
                         deleteMenu();
                         break;
                     case "4":
+                        System.out.println("==============================");     
                         System.out.println("Facturacion Pendiente");
                         break;
                     case "5":
                         if (Validations.endProgram()) {
                             result = false;
+                            System.out.println("=============================="); 
                             System.out.println("Byeeee");
                         }
                         break;

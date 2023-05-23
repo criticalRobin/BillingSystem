@@ -252,6 +252,7 @@ public class Validations {
 
     public static boolean endProgram() {
         boolean result = true;
+
         do {
             String confirm = ScannerReader.endProgram().toUpperCase();
             if (confirm.equals("Y")) {
