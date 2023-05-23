@@ -92,23 +92,23 @@ public class ScannerReader {
 
     ///////////////////////////////////////////////////
     ////////// Menu
-    public static int readOptionFromMenu() {
+    public static String readOptionFromMenu() {
         Messages.menuOptions();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
-    public static int readOptionFromAddMenu() {
+    public static String readOptionFromAddMenu() {
         Messages.addMenu();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
-    public static int readOptionFromUpdateMenu() {
+    public static String readOptionFromUpdateMenu() {
         Messages.updateMenu();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
-    public static int readOptionFromDeleteMenu() {
+    public static String readOptionFromDeleteMenu() {
         Messages.deleteMenu();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 }
