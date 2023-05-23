@@ -2,6 +2,7 @@ package Views;
 
 import Complements.Messages;
 import Complements.ScannerReader;
+import Complements.Validations;
 import Controllers.ClientController;
 
 public class Menu {
@@ -30,7 +31,7 @@ public class Menu {
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (principalMenu != "5");
+            } while (Validations.continueUpdate());
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -59,7 +60,7 @@ public class Menu {
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (preMenu != "4");
+            } while (Validations.continueUpdate());
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -73,6 +74,7 @@ public class Menu {
                 switch (preMenu) {
                     case "1":
                         System.out.println("Clientes");
+                        Messages.clientList();
                         ClientController.updateClientController();
                         break;
                     case "2":
@@ -88,7 +90,7 @@ public class Menu {
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (preMenu != "4");
+            } while (Validations.continueUpdate());
         } catch (Exception e) {
             Messages.errorMessage();
         }
@@ -117,7 +119,7 @@ public class Menu {
                         System.out.println("No es una opción válida");
                         break;
                 }
-            } while (preMenu != "4");
+            } while (Validations.continueUpdate());
         } catch (Exception e) {
             Messages.errorMessage();
         }

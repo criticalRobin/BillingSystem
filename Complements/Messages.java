@@ -88,7 +88,7 @@ public class Messages {
     }
 
     public static void continueUpdate() {
-        System.out.println("Desea continuar con la modificación S/N");
+        System.out.println("Desea continuar con la modificación Y/N");
     }
 
     ///////////////////////////////////////////////////////////

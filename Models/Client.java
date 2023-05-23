@@ -77,7 +77,7 @@ public class Client {
     }
 
     public String toString() {
-        return this.id +"--"+ this.names +" "+ this.lastnames;
+        return this.getId() +"--"+ this.getNames() +" "+ this.getLastnames()+"\n";
     }
     /*
      * public static void main(String[] args) {
