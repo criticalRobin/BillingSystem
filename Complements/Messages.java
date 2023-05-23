@@ -292,4 +292,13 @@ public class Messages {
         System.out.print("Ingrese la opcion que desee: ");
     }
     /////////////////////////////////////////////////
+
+
+    //Para bill
+    public static void noProductsAndServices() {
+        System.out.print("No hay productos o servicios preparados para ser facturados");
+    }
+
+    
+
 }
