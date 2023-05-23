@@ -9,7 +9,7 @@ public class ClientController {
 
     public static boolean addClientController() {
         boolean result = true;
-        int typeId;
+        String typeId;
         String id;
         String name;
         String Lastname;
@@ -26,7 +26,7 @@ public class ClientController {
 
         do {
             id = ScannerReader.readID();
-            if (typeId == 1)
+            if (typeId == "1")
                 if (!Validations.validateID(id))
                     result = false;
                 else

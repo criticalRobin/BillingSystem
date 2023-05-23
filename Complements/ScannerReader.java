@@ -9,14 +9,14 @@ public class ScannerReader {
     // clase Scanner lee el nombre ingresado por teclado
     ////////////////////////////////////////////////////////////////////////
     // Clients
-    public static int readUpdateClient() {
+    public static String readUpdateClient() {
         Messages.updateClientOptions();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
-    public static int readTypeID() {
+    public static String readTypeID() {
         Messages.requestTypeId();
-        return SC.nextInt();
+        return SC.nextLine();
     }
 
     public static String readName() {
