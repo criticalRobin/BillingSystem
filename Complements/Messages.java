@@ -16,6 +16,11 @@ public class Messages {
         System.out.println("Tenga un buen dia hasta la proxima");
     }
 
+
+    public static void invalidPrice() {
+        System.out.println("Precio invalido");
+    }
+
     /////////////////////////////////////////////////
     // Client
     public static void clientList() {

@@ -215,4 +215,14 @@ public class Validations {
         return result;
     }
 
+
+    public static boolean validatePriceEntero(String price) {
+        if (price.matches("^\\d+$")) {
+            return true;
+        } else {
+            Messages.invalidPrice();;
+        }
+        return false;
+    }
+
 }
