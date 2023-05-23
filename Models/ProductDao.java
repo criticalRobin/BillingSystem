@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import Complements.Messages;
 import Complements.ScannerReader;
+import Complements.Validations;
 
 public class ProductDao {
     static List<Product> products = new LinkedList<>();
@@ -26,13 +27,17 @@ public class ProductDao {
                     switch (option) {
                         case 1:
                             String newName = ScannerReader.readProducServiceName();
-                            pro.setName(newName);
-                            Messages.updateProductClient();
+                            if (Validations.validateProductName(newName)) {
+                                pro.setName(newName);
+                                Messages.updateProductClient();
+                            }
                             break;
                         case 2:
                             double newPrice = ScannerReader.readProductServicePriceByUnit();
-                            pro.setPriceByUnit(newPrice);
-                            Messages.updateProductClient();
+                            if (Validations.validatePrice(Double.toString(newPrice))) {
+                                pro.setPriceByUnit(newPrice);
+                                Messages.updateProductClient();
+                            }
                             break;
                         default:
                             Messages.switchDefaultMessage();

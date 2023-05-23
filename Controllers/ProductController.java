@@ -66,7 +66,6 @@ public class ProductController {
             ProductDao.updateProductInfo(id);
             return true;
         }
-        // esto puse solo para guardar
-        return true;
+        return false;
     }
 }
