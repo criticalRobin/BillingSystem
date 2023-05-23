@@ -27,73 +27,72 @@ public class Bill {
         b.calculateTotal();
     }
 
-
-    public void printProducts(Product p, double total){
-        System.out.printf("%-10d | %-20s | %-10.2f | %-10.2f\n\n", p.getQuantity(), p.getName(), p.getPriceByUnit(), total);
+    public void printProducts(Product p, double total) {
+        System.out.printf("%-10d | %-20s | %-10.2f | %-10.2f\n\n", p.getQuantity(), p.getName(), p.getPriceByUnit(),
+                total);
     }
-    public void printServices(Service s, double total){
+
+    public void printServices(Service s, double total) {
         System.out.printf("%-10s | %-20s | %-10.2f | %-10.2f\n\n", s.getId(), s.getName(), s.getPriceByUnit(), total);
     }
 
     // metodo provisional de calcular precio
     public boolean calculateTotal() {
         double totalTemp = 0; // almaccena el total de un producto
-        double subtotal=0; // es el precio del producto sin impuestos
+        double subtotal = 0; // es el precio del producto sin impuestos
         double totalWithoutIVA = 0; // es el subtotal sin iva de todo
         double totalSubtotal = 0; // es el subtotal con iva de todo
         double ivaTotal = 0; // suma de solo el iva
-        double totalBill = 0;  // suma de todos los productos
-       
-       
-        
-        
-        
+        double totalBill = 0; // suma de todos los productos
+
         if (products.isEmpty() && services.isEmpty()) {
-            //mensaje de que no hay productos ni servicios
+            // mensaje de que no hay productos ni servicios
             return false;
         }
-        //para productos
-        if(!products.isEmpty()){
-            System.out.printf("Productos:\n%-10s | %-20s | %-10s | %-10s\n\n", "Cantidad", "Producto", "Precio U.", "Total");
-           for (Product product : products) {
-            if(product.getIva()!=0.0){
-                subtotal = (product.getQuantity()*product.getPriceByUnit()); // precio sin impuesto
-                totalSubtotal = totalSubtotal + subtotal; // suma de subtotales
+        // para productos
+        if (!products.isEmpty()) {
+            System.out.printf("Productos:\n%-10s | %-20s | %-10s | %-10s\n\n", "Cantidad", "Producto", "Precio U.",
+                    "Total");
+            for (Product product : products) {
+                if (product.getIva() != 0.0) {
+                    subtotal = (product.getQuantity() * product.getPriceByUnit()); // precio sin impuesto
+                    totalSubtotal = totalSubtotal + subtotal; // suma de subtotales
 
-                totalTemp = subtotal*((product.getIva()/100.0)+1); //precio con impuesto
-                this.printProducts(product, totalTemp);
+                    totalTemp = subtotal * ((product.getIva() / 100.0) + 1); // precio con impuesto
+                    this.printProducts(product, totalTemp);
 
-                ivaTotal = ivaTotal + (totalTemp - subtotal); // suma de solo IVAS
-                totalBill = totalBill +totalTemp;
-          
-            }else{
-                totalTemp = (product.getQuantity()*product.getPriceByUnit());
-                this.printProducts(product, totalTemp);
+                    ivaTotal = ivaTotal + (totalTemp - subtotal); // suma de solo IVAS
+                    totalBill = totalBill + totalTemp;
 
-                totalWithoutIVA = totalWithoutIVA + totalTemp; //subtotal de 0
-                totalBill = totalBill + totalWithoutIVA;
+                } else {
+                    totalTemp = (product.getQuantity() * product.getPriceByUnit());
+                    this.printProducts(product, totalTemp);
+
+                    totalWithoutIVA = totalWithoutIVA + totalTemp; // subtotal de 0
+                    totalBill = totalBill + totalWithoutIVA;
+                }
+                totalTemp = 0;
+                System.out.printf("%-10s | %-20s | %-10s | %-10s", "----------", "--------------------",
+                        "----------", "----------\n");
             }
-            totalTemp = 0;
-            System.out.printf("%-10s | %-20s | %-10s | %-10s", "----------", "--------------------",
-            "----------", "----------\n");
-           } 
 
         }
-        if(!services.isEmpty()){
+        if (!services.isEmpty()) {
             for (Service service : services) {
-                System.out.printf("Servicios:\n%-10s | %-20s | %-10s | %-10s\n\n", "Código", "Servicio", "Precio", "Total");
-        
-                if(service.getIva()!=0.0){
-                    subtotal = (service.getPriceByUnit()); //precio sin iva
-                    totalSubtotal = totalSubtotal + subtotal; //suma de subtotales
-                    
-                    totalTemp = subtotal*((service.getIva()/100.0)+1); //precio con iva
+                System.out.printf("Servicios:\n%-10s | %-20s | %-10s | %-10s\n\n", "Código", "Servicio", "Precio",
+                        "Total");
+
+                if (service.getIva() != 0.0) {
+                    subtotal = (service.getPriceByUnit()); // precio sin iva
+                    totalSubtotal = totalSubtotal + subtotal; // suma de subtotales
+
+                    totalTemp = subtotal * ((service.getIva() / 100.0) + 1); // precio con iva
                     this.printServices(service, totalTemp); // se le imprime
 
-                    ivaTotal = ivaTotal +(totalTemp-subtotal); // suma de solo iva
+                    ivaTotal = ivaTotal + (totalTemp - subtotal); // suma de solo iva
 
                     totalBill = totalBill + totalTemp; // total precio con impuestos
-                }else{
+                } else {
                     totalTemp = (service.getPriceByUnit());
                     this.printServices(service, totalTemp);
                     totalWithoutIVA = totalWithoutIVA + totalTemp;
@@ -101,15 +100,16 @@ public class Bill {
                 }
                 totalTemp = 0;
                 System.out.printf("%-10s | %-20s | %-10s | %-10s", "----------", "--------------------",
-                "----------", "----------\n");   
+                        "----------", "----------\n");
             }
-            
 
         }
-        System.out.printf("Subtotal 0%%: %.2f\nSubtotal 12%%: %.2f\nIVA 12%%: %.2f\nTotal: %.2f",totalWithoutIVA, totalSubtotal, ivaTotal, totalBill);
+        System.out.printf("Subtotal 0%%: %.2f\nSubtotal 12%%: %.2f\nIVA 12%%: %.2f\nTotal: %.2f", totalWithoutIVA,
+                totalSubtotal, ivaTotal, totalBill);
         return true;
     }
-    //ENCABEZADO DE LA FACTURA
+
+    // ENCABEZADO DE LA FACTURA
     public void header() {
 
         if (this.c.getTypeId().equals("1")) {
