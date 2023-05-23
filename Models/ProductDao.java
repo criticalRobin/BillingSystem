@@ -15,8 +15,8 @@ public class ProductDao {
             return true;
         } catch (NullPointerException ex) {
             Messages.errorMessage();
-            return false;
         }
+        return false;
     }
 
     public static boolean updateProductInfo(String id) {
@@ -33,9 +33,9 @@ public class ProductDao {
                             }
                             break;
                         case 2:
-                            double newPrice = ScannerReader.readProductServicePriceByUnit();
-                            if (Validations.validatePrice(Double.toString(newPrice))) {
-                                pro.setPriceByUnit(newPrice);
+                            String newPrice = ScannerReader.readProductServicePriceByUnit();
+                            if (Validations.validatePrice(newPrice)) {
+                                pro.setPriceByUnit(Double.parseDouble(newPrice));
                                 Messages.updateProductClient();
                             }
                             break;

@@ -30,8 +30,8 @@ public class ServiceDao {
                             serv.setName(newName);
                             break;
                         case 2:
-                            double newPrice = ScannerReader.readProductServicePriceByUnit();
-                            serv.setPriceByUnit(newPrice);
+                            String newPrice = ScannerReader.readProductServicePriceByUnit();
+                            serv.setPriceByUnit(Double.parseDouble(newPrice));
                             break;
                         default:
                             Messages.switchDefaultMessage();

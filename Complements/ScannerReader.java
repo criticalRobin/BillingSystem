@@ -59,33 +59,33 @@ public class ScannerReader {
 
     public static String readProductServiceId() {
         Messages.requestProductServiceId();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readProducServiceName() {
         Messages.requestProductServiceName();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
-    public static double readProductServicePriceByUnit() {
+    public static String readProductServicePriceByUnit() {
         Messages.requestProductServicePriceByUnit();
-        return  SC.nextDouble();
+        return SC.nextLine();
     }
 
-    public static double readProductServiceIva() {
+    public static String readProductServiceIva() {
         Messages.requestProductServiceIva();
-        return SC.nextDouble();
+        return SC.nextLine();
     }
 
     public static String readUmeasure() {
         Messages.requestProductUmeasure();
-        return  removeSpaces(SC.nextLine());
-   }
+        return removeSpaces(SC.nextLine());
+    }
     ///////////////////////////////////
 
     public static String continueUpdate() {
         Messages.continueUpdate();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
     //////////////////////////////////////////////////////////
@@ -94,17 +94,17 @@ public class ScannerReader {
     ////////// Menu
     public static String readOptionFromMenu() {
         Messages.menuOptions();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromAddMenu() {
         Messages.addMenu();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromUpdateMenu() {
         Messages.updateMenu();
-        return  removeSpaces(SC.nextLine());
+        return removeSpaces(SC.nextLine());
     }
 
     public static String readOptionFromDeleteMenu() {

@@ -4,6 +4,7 @@ import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
 import Controllers.ClientController;
+import Controllers.ProductController;
 
 public class Menu {
     public static void principalMenu() {
@@ -49,6 +50,7 @@ public class Menu {
                         break;
                     case "2":
                         System.out.println("Productos");
+                        ProductController.addProductControlled();
                         break;
                     case "3":
                         System.out.println("Servicios");
