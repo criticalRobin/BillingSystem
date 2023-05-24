@@ -110,8 +110,9 @@ public class Bill {
     }
 
     // ENCABEZADO DE LA FACTURA
-    public void header() {
-
+    public boolean header() {
+        if (c.equals(null))
+            return false;
         if (this.c.getTypeId().equals("1")) {
             System.out.println("********************************Factura**********************************");
             System.out.printf("Cliente: %s\t\t\tCédula: %s\n" +
@@ -119,6 +120,7 @@ public class Bill {
                     + "Dirección: %s\t\tFecha: %s\n\n", this.c.getLastnames() + " " + this.c.getNames(), this.c.getId(),
                     this.c.getEmail(),
                     this.c.getPhoneNumber(), this.c.getAddress(), LocalDate.now());
+            return true;
 
         } else {
             System.out.println("********************************Factura**********************************");
@@ -127,9 +129,26 @@ public class Bill {
                     + "Dirección: %s\t\tFecha: %s\n\n", this.c.getLastnames() + " " + this.c.getNames(), this.c.getId(),
                     this.c.getEmail(),
                     this.c.getPhoneNumber(), this.c.getAddress(), LocalDate.now());
-
+            return true;
         }
 
     }
 
+    ////////////////////////////////////////
+    // add,deque methods
+    public void addProduct(Product product) {
+        products.offer(product);
+    }
+
+    public void addService(Service service) {
+        services.offer(service);
+    }
+
+    public Product removeProduct() {
+        return products.poll();
+    }
+
+    public Service removeService() {
+        return services.poll();
+    }
 }

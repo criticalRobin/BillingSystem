@@ -3,9 +3,11 @@ package Views;
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
+import Controllers.BillController;
 import Controllers.ClientController;
 import Controllers.ProductController;
 import Controllers.ServiceController;
+import Models.Client;
 import Models.ProductDao;
 import Models.ServiceDao;
 
@@ -28,7 +30,16 @@ public class Menu {
                         break;
                     case "4":
                         System.out.println("==============================");
-                        System.out.println("Facturacion Pendiente");
+                        System.out.println("Facturacion");
+                        Client cli = BillController.getclient();
+                        if (cli.equals(null)) {
+                            break;
+                        }
+                        Bill bill = new Bill(cli);
+                        if (BillController.toBuy(bill))
+                            BillController.toBill(bill);
+                        else
+                            System.out.println("No se pudo completar la facturacion");
                         break;
                     case "5":
                         if (Validations.endProgram()) {
