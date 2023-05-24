@@ -134,7 +134,7 @@ public class Bill {
         String factura = "Documento Número: " + numeroAleatorio;
         String printTime = "Hora de impresión: " + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
-        System.out.printf("%s\n%s\n<NO SE ACEPTAN DEVOLUCIONES>\n\t\t\t¡Gracias por su compra!", factura, printTime);
+        System.out.printf("%s\n%s\n<NO SE ACEPTAN DEVOLUCIONES>\n\t\t\t¡Gracias por su compra!\n", factura, printTime);
     }
 
     // add,deque methods
