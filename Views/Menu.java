@@ -13,7 +13,7 @@ import Models.ProductDao;
 import Models.ServiceDao;
 
 public class Menu {
-    
+
     public static void principalMenu() {
         try {
             boolean result = true;
@@ -31,24 +31,23 @@ public class Menu {
                         deleteMenu();
                         break;
                     case "4":
-                    if (ClientDao.clients.isEmpty()){
-                        System.out.println("No existe ningun cliente registrado");
-                        break; 
-                    }
+                        if (ClientDao.clients.isEmpty()) {
+                            System.out.println("No existe ningun cliente registrado");
+                            break;
+                        }
                         System.out.println("==============================");
                         System.out.println("Facturacion");
-                        
+
                         Messages.clientList();
                         Client cli = BillController.getclient();
-                        if (cli==null) {
+                        if (cli == null) {
                             break;
                         }
                         Bill bill = new Bill(cli);
-                        if (BillController.toBuy(bill)){
+                        if (BillController.toBuy(bill)) {
                             BillController.toBill(bill);
                             bill = null;
-                        }
-                        else
+                        } else
                             System.out.println("No se pudo completar la facturacion");
                         break;
                     case "5":
@@ -114,21 +113,36 @@ public class Menu {
                 switch (preMenu) {
                     case "1":
                         System.out.println("Clientes");
-                        Messages.clientList();
-                        ClientController.updateClientController();
-                        break;
+                        if (ClientDao.clients.isEmpty()) {
+                            Messages.emptyClients();
+                            break;
+                        } else {
+                            Messages.clientList();
+                            ClientController.updateClientController();
+                            break;
+                        }
                     case "2":
                         System.out.println("Productos");
-                        ProductDao.print();
-                        ProductController.updateProductControlled();
-                        ProductDao.print();
-                        break;
+                        if (ProductDao.products.isEmpty()) {
+                            Messages.emptyProduct();
+                            break;
+                        } else {
+                            ProductDao.print();
+                            ProductController.updateProductControlled();
+                            ProductDao.print();
+                            break;
+                        }
                     case "3":
                         System.out.println("Servicios");
-                        ServiceDao.print();
-                        ServiceController.updateServiceControlled();
-                        ServiceDao.print();
-                        break;
+                        if (ServiceDao.services.isEmpty()) {
+                            Messages.emptyService();
+                            break;
+                        } else {
+                            ServiceDao.print();
+                            ServiceController.updateServiceControlled();
+                            ServiceDao.print();
+                            break;
+                        }
                     case "4":
                         if (!Validations.continueUpdate("")) {
                             result = false;
@@ -154,20 +168,35 @@ public class Menu {
                 switch (preMenu) {
                     case "1":
                         System.out.println("Clientes");
-                        ClientController.delateClientController();
-                        break;
+                        if (ClientDao.clients.isEmpty()) {
+                            Messages.emptyClients();
+                            break;
+                        } else {
+                            ClientController.delateClientController();
+                            break;
+                        }
                     case "2":
                         System.out.println("Productos");
-                        ProductDao.print();
-                        ProductController.deleteProductControlled();
-                        ProductDao.print();
-                        break;
+                        if (ProductDao.products.isEmpty()) {
+                            Messages.emptyProduct();
+                            break;
+                        } else {
+                            ProductDao.print();
+                            ProductController.deleteProductControlled();
+                            ProductDao.print();
+                            break;
+                        }
                     case "3":
                         System.out.println("Servicios");
-                        ServiceDao.print();
-                        Messages.deletedService();
-                        ServiceDao.print();
-                        break;
+                        if (ServiceDao.services.isEmpty()) {
+                            Messages.emptyService();
+                            break;
+                        } else {
+                            ServiceDao.print();
+                            ServiceController.deleteServiceControlled();
+                            ServiceDao.print();
+                            break;
+                        }
                     case "4":
                         if (!Validations.continueDelete("")) {
                             result = false;
