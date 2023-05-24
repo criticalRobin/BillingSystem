@@ -13,6 +13,10 @@ public class ClientDao {
     public static boolean insertClient(String names, String lastnames, String id, String typeId, String address,
             String phoneNumber, String email) {
         try {
+            if (contains(id)){
+                
+                return false;
+            }
             clients.add(new Client(names, lastnames, id, typeId, address, phoneNumber, email));
             return true;
         } catch (Exception e) {
@@ -107,7 +111,7 @@ public class ClientDao {
         return lista;
     }
 
-    public boolean contains(String id) {
+    private static boolean contains(String id) {
         for (Client client : clients) {
             if (client.getId().equals(id)) {
             return true;
