@@ -82,12 +82,17 @@ public class ScannerReader {
         return removeSpaces(SC.nextLine());
     }
 
-    public static int readIvaOption() {
-        Messages.requestIvaOption();
-        return SC.nextInt();
+    public static String readProductUmeasureOption() {
+        Messages.requestProductUmeasure();
+        return removeSpaces(SC.nextLine());
     }
 
-    public static String readQuantity(){
+    public static String readIvaOption() {
+        Messages.requestIvaOption();
+        return SC.nextLine();
+    }
+
+    public static String readQuantity() {
         Messages.requestProductQuantity();
         return SC.nextLine();
     }
@@ -137,7 +142,7 @@ public class ScannerReader {
         return removeSpaces(SC.nextLine());
     }
 
-    public static String readOptionFromToBuy(){
+    public static String readOptionFromToBuy() {
         Messages.shopMenu();
         return removeSpaces(SC.nextLine());
     }
