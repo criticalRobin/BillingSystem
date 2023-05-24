@@ -35,10 +35,10 @@ public class BillController {
         return null;
     }
 
-    public static boolean toBuy(Bill bill) {
-        String option = ScannerReader.readOptionFromToBuy();
+    public static boolean toBuy(Bill bill) {  
         boolean result = false;
         do {
+            String option = ScannerReader.readOptionFromToBuy();
             switch (option) {
                 case "1":
                     System.out.println("Productos");
