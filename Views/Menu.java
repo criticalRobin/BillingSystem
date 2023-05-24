@@ -40,7 +40,7 @@ public class Menu {
                         
                         Messages.clientList();
                         Client cli = BillController.getclient();
-                        if (cli.equals(null)) {
+                        if (cli==null) {
                             break;
                         }
                         Bill bill = new Bill(cli);
