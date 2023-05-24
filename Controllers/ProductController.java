@@ -40,10 +40,10 @@ public class ProductController {
                 if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
                     result = false;
                 } else {
-
                     result = true;
                 }
             } catch (Exception e) {
+                Messages.invalidPrice();
                 result = false;
             }
 
