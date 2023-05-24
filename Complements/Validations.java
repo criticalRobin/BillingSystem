@@ -292,7 +292,18 @@ public class Validations {
         if (extent.matches("^[1-9]|10$")) {
             return true;
         } else {
-            Messages.LimitNumbers();
+            Messages.limitNumbers();
+        }
+        return false;
+    }
+
+    public static boolean compareIDOrRUC(String extent) {
+        if (extent.matches("^\\d{10}$")) {
+            return true;}
+	else if (extent.matches("^\\d{13}$")){
+	     return true;}
+         else {
+            Messages.limitIDOrRUC();
         }
         return false;
     }
