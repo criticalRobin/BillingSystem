@@ -51,14 +51,16 @@ public class BillController {
                     for (Product pro : ProductDao.products) {
                         if (pro.getId().equals(idP)) {
                             do {
-                                try{
+                                try {
                                     quantity = Integer.parseInt(ScannerReader.readQuantity());
-                                    result =true;
-                                }catch (NumberFormatException e){
-                                    
+                                    if (Validations.validateNumbers(String.valueOf(quantity)))
+                                        result = true;
+                                } catch (NumberFormatException e) {
+                                    Messages.LimitNumbers();
                                     result = false;
                                 }
                             } while (!result);
+
                             bill.addProduct(pro, quantity);
                             result = true;
                             break;
