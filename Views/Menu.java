@@ -172,6 +172,7 @@ public class Menu {
                             Messages.emptyClients();
                             break;
                         } else {
+                            Messages.clientList();
                             ClientController.delateClientController();
                             break;
                         }
