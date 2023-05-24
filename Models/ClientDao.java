@@ -14,7 +14,7 @@ public class ClientDao {
             String phoneNumber, String email) {
         try {
             if (contains(id)){
-                
+                Messages.errorId();
                 return false;
             }
             clients.add(new Client(names, lastnames, id, typeId, address, phoneNumber, email));
