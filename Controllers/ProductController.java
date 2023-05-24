@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.util.Locale;
+
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
@@ -40,22 +42,17 @@ public class ProductController {
                 Messages.wrongPriceProduct();
                 result = false;
             } else {
-               
+
                 result = true;
             }
         } while (!result);
 
-        do {
-            uMeasure = ScannerReader.readUmeasure();
-            if (!Validations.validateExtent(uMeasure)) {
-                Messages.wrongExtent();
-                result = false;
-            } else {
-                result = true;
-            }
-        } while (!result);
+        uMeasure = selectUmeasure();
+
         iva = selectIva();
-        ProductDao.registerProduct(id, name, priceByUnit, uMeasure, iva);
+
+        ProductDao.registerProduct(id.toUpperCase(Locale.ENGLISH), name.toUpperCase(Locale.ENGLISH), priceByUnit,
+                uMeasure, iva);
         Messages.productAdded();
         return result;
     }
@@ -79,16 +76,16 @@ public class ProductController {
 
     public static double selectIva() {
         double iva = 0;
-        int ivaOption;
+        String ivaOption;
         boolean result = true;
         do {
             ivaOption = ScannerReader.readIvaOption();
             switch (ivaOption) {
-                case 1:
+                case "1":
                     iva = 0.0;
                     result = true;
                     break;
-                case 2:
+                case "2":
                     iva = 12.0;
                     result = true;
                     break;
@@ -99,6 +96,38 @@ public class ProductController {
             }
         } while (!result);
         return iva;
+    }
+
+    public static String selectUmeasure() {
+        String uMeasure = "";
+        String uMeasureOption;
+        boolean result = true;
+        do {
+            uMeasureOption = ScannerReader.readProductUmeasureOption();
+            switch (uMeasureOption) {
+                case "1":
+                    uMeasure = "Lt";
+                    result = true;
+                    break;
+                case "2":
+                    uMeasure = "Kg";
+                    result = true;
+                    break;
+                case "3":
+                    uMeasure = "Gr";
+                    result = true;
+                    break;
+                case "4":
+                    uMeasure = "Lb";
+                    result = true;
+                    break;
+                default:
+                    Messages.wrongUmeasure();
+                    result = false;
+                    break;
+            }
+        } while (!result);
+        return uMeasure;
     }
 
 }

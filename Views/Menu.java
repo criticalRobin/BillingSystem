@@ -155,7 +155,7 @@ public class Menu {
                     case "3":
                         System.out.println("Servicios");
                         ServiceDao.print();
-                        ServiceController.deleteServiceControlled();
+                        Messages.deletedService();
                         ServiceDao.print();
                         break;
                     case "4":
