@@ -302,7 +302,7 @@ public class Messages {
 
     public static void LimitNumbers() {
         System.out.println("=============================="); 
-        System.out.println("Desea salir del programa? Y/N"); }
+        System.out.println("Solo se aceptan 10 numeros"); }
 
     public static void errorId() {
         System.out.println("=============================="); 
