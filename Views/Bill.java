@@ -136,12 +136,21 @@ public class Bill {
 
     ////////////////////////////////////////
     // add,deque methods
-    public void addProduct(Product product) {
+    public void addProduct(Product product, int quantity) {
+        if (products.contains(product)) {
+            product.setQuantity(product.getQuantity() + quantity);
+            products.remove(product);
+        } else {
+            product.setQuantity(quantity);
+        }
         products.offer(product);
     }
 
     public void addService(Service service) {
-        services.offer(service);
+        if (!services.contains(service))
+            services.offer(service);
+        else
+            System.out.println("Ya agrego este servicio");
     }
 
     public Product removeProduct() {

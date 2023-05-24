@@ -48,10 +48,9 @@ public class BillController {
                     if (!Validations.validateIdentifier(idP))
                         return false;
                     for (Product pro : ProductDao.products) {
-                        if (pro.getId().equals(idP)) {
+                        if (pro.getId().equals(idP)) {      
                             int quantity = Integer.parseInt(ScannerReader.readQuantity());
-                            pro.setQuantity(quantity);
-                            bill.addProduct(pro);
+                            bill.addProduct(pro,quantity);
                             result = true;
                             break;
                         }
@@ -90,4 +89,6 @@ public class BillController {
         }
         return false;
     }
+
+
 }
