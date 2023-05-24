@@ -12,6 +12,10 @@ public class ServiceDao {
 
     public static boolean registerService(String id, String name, double priceByUnit, double iva) {
         try {
+            if (contains(id)){
+                Messages.errorId();
+                return false;
+            }
             services.add(new Service(id, name, priceByUnit, iva));
             return true;
         } catch (NullPointerException ex) {
@@ -67,5 +71,14 @@ public class ServiceDao {
             System.out.println("[" + ser.getName() + " - " + ser.getPriceByUnit() + " - " + ser.getIva() + " - "
                     + ser.getId() + "]");
         }
+    }
+
+    private static boolean contains(String id) {
+        for (Service ser : services) {
+            if (ser.getId().equals(id)) {
+            return true;
+            }
+        }
+        return false;
     }
 }
