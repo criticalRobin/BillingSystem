@@ -97,7 +97,7 @@ public class Bill {
             }
 
         }
-        System.out.printf("\t\t\tSubtotal 0%%: %.2f\n\t\t\tSubtotal 12%%: %.2f\n\t\t\tIVA 12%%: %.2f\n\t\t\tTotal: %.2f\n",totalWithoutIVA, totalSubtotal, ivaTotal, this.totalBill);
+        System.out.printf("\n\t\t\tSubtotal 0%%: %.2f\n\t\t\tSubtotal 12%%: %.2f\n\t\t\tIVA 12%%: %.2f\n\t\t\tTotal: %.2f\n",totalWithoutIVA, totalSubtotal, ivaTotal, this.totalBill);
         this.footer();
         return true;
     }
