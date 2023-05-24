@@ -8,7 +8,7 @@ import Complements.Validations;
 
 public class ClientDao {
     public static List<Client> clients = new LinkedList<>();
-    
+
 
     // inserta a un cliente a la lista
     public static boolean insertClient(String names, String lastnames, String id, String typeId, String address,
@@ -106,5 +106,11 @@ public class ClientDao {
             lista = lista + support;
         }
         return lista;
+    }
+
+    public boolean contains(String id){
+        for (Client client : clients) {
+            if (client.getId().equals(id)) {}}
+            return true;
     }
 }
