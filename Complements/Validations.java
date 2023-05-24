@@ -267,6 +267,7 @@ public class Validations {
         } while (!result);
         return result;
     }
+
     ////////////////////////////////
     public static boolean validatePriceWhole(String price) {
         if (price.matches("^\\d+$")) {
@@ -299,11 +300,13 @@ public class Validations {
 
     public static boolean compareIDOrRUC(String extent) {
         if (extent.matches("^\\d{10}$")) {
-            return true;}
-	else if (extent.matches("^\\d{13}$")){
-	     return true;}
-         else {
-            Messages.limitIDOrRUC();
+            if (Validations.validateID(extent))
+                return true;
+        } else if (extent.matches("^\\d{13}$")) {
+            if (Validations.validateRUC(extent))
+                return true;
+        } else {
+            Messages.wrongRangeID();
         }
         return false;
     }
