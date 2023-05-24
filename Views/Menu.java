@@ -38,7 +38,7 @@ public class Menu {
                         System.out.println("==============================");
                         System.out.println("Facturacion");
                         
-                        ClientDao.printlist();
+                        Messages.clientList();
                         Client cli = BillController.getclient();
                         if (cli.equals(null)) {
                             break;
