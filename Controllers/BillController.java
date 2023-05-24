@@ -17,12 +17,11 @@ public class BillController {
         boolean result = true;
         String id;
         do {
+
             id = ScannerReader.readID();
-            if (Validations.validateID(id)) {
+            if (Validations.compareIDOrRUC(id)) {
                 result = true;
-            } else if (Validations.validateRUC(id)) {
-                result = true;
-            } else {
+            }else {
                 result = false;
             }
         } while (!result);

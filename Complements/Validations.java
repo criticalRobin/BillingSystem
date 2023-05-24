@@ -300,10 +300,10 @@ public class Validations {
 
     public static boolean compareIDOrRUC(String extent) {
         if (extent.matches("^\\d{10}$")) {
-            return true;
-        } else if (extent.matches("^\\d{13}$")) {
-            return true;
-        } else {
+            return true;}
+	else if (extent.matches("^\\d{13}$")){
+	     return true;}
+         else {
             Messages.limitIDOrRUC();
         }
         return false;

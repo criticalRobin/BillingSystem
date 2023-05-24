@@ -46,6 +46,7 @@ public class Menu {
                         Bill bill = new Bill(cli);
                         if (BillController.toBuy(bill)) {
                             BillController.toBill(bill);
+                            ClientDao.clients.remove(cli);
                             bill = null;
                         } else
                             System.out.println("No se pudo completar la facturacion");
