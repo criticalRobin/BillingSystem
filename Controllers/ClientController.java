@@ -86,10 +86,7 @@ public class ClientController {
 
     public static boolean updateClientController() {
         String id = ScannerReader.readID();
-        if (Validations.validateID(id)) {
-            ClientDao.updateClient(id);
-            return true;
-        }else if (Validations.validateRUC(id)){
+        if (Validations.compareIDOrRUC(id)) {
             ClientDao.updateClient(id);
             return true;
         }
@@ -98,7 +95,8 @@ public class ClientController {
 
     public static boolean delateClientController() {
         String id = ScannerReader.readID();
-        if (Validations.validateID(id) || Validations.validateRUC(id)) {
+        
+        if (Validations.compareIDOrRUC(id)) {
             ClientDao.deleteClient(id);
         }
         return false;
