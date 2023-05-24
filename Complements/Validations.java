@@ -60,18 +60,18 @@ public class Validations {
     public static boolean validateRUC(String ruc) {
         if (ruc.equals(null) || ruc.equals("")) {
             // ruc vacio
-            Messages.messageEmptyRUC();
+            Messages.messageEmptyID();
             return false;
         }
         if (!ruc.matches("\\d+")) {
             // mensaje de no son numeros
-            Messages.noNumbersRUC();
+            Messages.noNumbersID();
             System.out.println("solo numeros");
             return false;
         }
         if ((ruc.length() != 10 && ruc.length() != 13)) {
             // ruc no valido
-            Messages.wrongRUC();
+            Messages.wrongID();
             return false;
         }
 

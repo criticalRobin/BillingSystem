@@ -155,17 +155,17 @@ public class Messages {
     // Cedula
     public static void wrongID() {
         System.out.println("==============================");
-        System.out.println("Cedula del cliente no es valido");
+        System.out.println("Cedula o RUC del cliente no es valido");
     }
 
     public static void wrongRangeID() {
         System.out.println("==============================");
-        System.out.println("Cedula del cliente esta fuera rango");
+        System.out.println("Cedula o RUC del cliente esta fuera rango");
     }
 
     public static void noNumbersID() {
         System.out.println("==============================");
-        System.out.println("El campo cedula solo acepta numeros");
+        System.out.println("El campo Cedula o RUC solo acepta numeros");
     }
 
     public static void wrongTypeID() {
@@ -175,23 +175,7 @@ public class Messages {
 
     public static void messageEmptyID() {
         System.out.println("==============================");
-        System.out.println("Mensaje Cedula vacio");
-    }
-
-    // RUC
-    public static void wrongRUC() {
-        System.out.println("==============================");
-        System.out.println("RUC del cliente no es valido");
-    }
-
-    public static void noNumbersRUC() {
-        System.out.println("==============================");
-        System.out.println("RUC solo acepta numeros");
-    }
-
-    public static void messageEmptyRUC() {
-        System.out.println("==============================");
-        System.out.println("Campo RUC vacio");
+        System.out.println("Mensaje Cedula o RUC vacio");
     }
 
     // Medida
@@ -395,4 +379,11 @@ public class Messages {
         System.out.println("=============================="); 
         System.out.println("Desea salir del programa? Y/N");
     }
+
+    public static void errorId() {
+        System.out.println("=============================="); 
+        System.out.println("La ID ya esta registrada");
+    }
+
+
 }
