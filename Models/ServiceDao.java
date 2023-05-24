@@ -2,6 +2,7 @@ package Models;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import Complements.Messages;
 import Complements.ScannerReader;
@@ -26,7 +27,7 @@ public class ServiceDao {
                     String option = ScannerReader.readUpdateProductServiceOption();
                     switch (option) {
                         case "1":
-                            String newName = ScannerReader.readProductServiceName();
+                            String newName = ScannerReader.readProductServiceName().toUpperCase(Locale.ENGLISH);
                             serv.setName(newName);
                             break;
                         case "2":

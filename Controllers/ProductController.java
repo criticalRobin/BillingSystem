@@ -19,7 +19,6 @@ public class ProductController {
         do {
             id = ScannerReader.readProductServiceId();
             if (!Validations.validateIdentifier(id)) {
-                Messages.wrongIDProduct();
                 result = false;
             } else {
                 result = true;
