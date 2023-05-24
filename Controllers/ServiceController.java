@@ -69,16 +69,16 @@ public class ServiceController {
 
     public static double selectIva() {
         double iva = 0;
-        int ivaOption;
+        String ivaOption;
         boolean result = true;
         do {
             ivaOption = ScannerReader.readIvaOption();
             switch (ivaOption) {
-                case 1:
+                case "1":
                     iva = 0.0;
                     result = true;
                     break;
-                case 2:
+                case "2":
                     iva = 12.0;
                     result = true;
                     break;
