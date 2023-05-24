@@ -300,7 +300,11 @@ public class Messages {
         System.out.println("==============================");
         System.out.println("Desea salir del programa? Y/N");}
 
-    public static void LimitNumbers() {
+    public static void limitNumbers() {
+        System.out.println("=============================="); 
+        System.out.println("Solo se aceptan 10 numeros"); }
+
+    public static void limitIDOrRUC() {
         System.out.println("=============================="); 
         System.out.println("Solo se aceptan 10 numeros"); }
 
