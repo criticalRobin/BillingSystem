@@ -79,8 +79,8 @@ public class ClientController {
                 result = true;
         } while (!result);
 
-        ClientDao.insertClient(name.toUpperCase(), Lastname.toUpperCase(), id, typeId, address, phone, email);
-        Messages.registerCliente();
+        if (ClientDao.insertClient(name.toUpperCase(), Lastname.toUpperCase(), id, typeId, address, phone, email))
+            Messages.registerCliente();
         return result;
     }
 
