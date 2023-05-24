@@ -8,10 +8,12 @@ import Controllers.ClientController;
 import Controllers.ProductController;
 import Controllers.ServiceController;
 import Models.Client;
+import Models.ClientDao;
 import Models.ProductDao;
 import Models.ServiceDao;
 
 public class Menu {
+    
     public static void principalMenu() {
         try {
             boolean result = true;
@@ -29,15 +31,23 @@ public class Menu {
                         deleteMenu();
                         break;
                     case "4":
+                    if (ClientDao.clients.isEmpty()){
+                        System.out.println("No existe ningun cliente registrado");
+                        break; 
+                    }
                         System.out.println("==============================");
                         System.out.println("Facturacion");
+                        
+                        ClientDao.printlist();
                         Client cli = BillController.getclient();
                         if (cli.equals(null)) {
                             break;
                         }
                         Bill bill = new Bill(cli);
-                        if (BillController.toBuy(bill))
+                        if (BillController.toBuy(bill)){
                             BillController.toBill(bill);
+                            bill = null;
+                        }
                         else
                             System.out.println("No se pudo completar la facturacion");
                         break;
