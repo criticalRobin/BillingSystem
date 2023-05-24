@@ -379,4 +379,9 @@ public class Messages {
         System.out.println("=============================="); 
         System.out.println("Desea salir del programa? Y/N");
     }
+
+    public static void LimitNumbers() {
+        System.out.println("=============================="); 
+        System.out.println("Desea salir del programa? Y/N");
+    }
 }

@@ -158,7 +158,7 @@ public class Validations {
     ////////////////////////// validaciones productos
     // permitir números, letras o una combinación de ambos en el identificador
     public static boolean validateIdentifier(String identifier) {
-        if (identifier.matches("^[A-Za-z0-9]+$")) {
+        if (identifier.matches("^[A-Za-z0-9]{4}$")) {
             return true;
         } else {
             // mensaje identificador prodcuto no no valido
@@ -288,4 +288,12 @@ public class Validations {
         return false;
     }
 
+    public static boolean validateNumbers(String extent) {
+        if (extent.matches("^[1-9]|10$")) {
+            return true;
+        } else {
+            Messages.LimitNumbers();
+        }
+        return false;
+    }
 }
