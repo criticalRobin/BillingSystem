@@ -219,12 +219,13 @@ public class Validations {
     public static boolean continueAdd(String data) {
         boolean result = true;
         do {
-            String confirm = ScannerReader.continueAdd(data).toUpperCase();
+            String confirm = ScannerReader.continueAdd(data);
+            if (confirm.equals("y") || confirm.equals("n"))
+                confirm = confirm.toUpperCase();
             if (confirm.equals("Y")) {
                 return true;
             } else if (confirm.equals("N")) {
                 return false;
-
             } else {
                 Messages.switchDefaultMessage();
                 result = false;

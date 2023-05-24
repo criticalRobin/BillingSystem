@@ -43,6 +43,7 @@ public class ServiceController {
                     result = true;
                 }
                 }catch (Exception e){
+                    Messages.invalidPrice();
                     result = false;
                 }
         } while (!result);
