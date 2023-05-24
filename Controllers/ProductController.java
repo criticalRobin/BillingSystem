@@ -28,7 +28,6 @@ public class ProductController {
         do {
             name = ScannerReader.readProductServiceName();
             if (!Validations.validateProductName(name)) {
-                Messages.wrongNameProduct();
                 result = false;
             } else {
                 result = true;
@@ -38,7 +37,6 @@ public class ProductController {
         do {
             priceByUnit = Double.parseDouble(ScannerReader.readProductServicePriceByUnit());
             if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
-                Messages.wrongPriceProduct();
                 result = false;
             } else {
 

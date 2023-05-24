@@ -18,7 +18,6 @@ public class ServiceController {
         do {
             id = ScannerReader.readProductServiceId();
             if (!Validations.validateIdentifier(id)) {
-                Messages.wrongIDProduct();
                 result = false;
             } else {
                 result = true;
@@ -28,7 +27,6 @@ public class ServiceController {
         do {
             name = ScannerReader.readProductServiceName();
             if (!Validations.validateProductName(name)) {
-                Messages.wrongNameProduct();
                 return false;
             } else {
                 result = true;
@@ -38,7 +36,6 @@ public class ServiceController {
         do {
             String price = ScannerReader.readProductServicePriceByUnit();
             if (!Validations.validatePrice(price)) {
-                Messages.wrongPriceProduct();
                 return false;
             } else {
                 priceByUnit = Double.parseDouble(price);
