@@ -163,6 +163,11 @@ public class Messages {
         System.out.println("IVA no valido");}
 
     // Servicio
+
+    public static void addService() {
+        System.out.println("==============================");
+        System.out.println("Servicio agregado");}
+
     public static void wrongNameService() {
         System.out.println("==============================");
         System.out.println("Nombre del servicio no valido");}
