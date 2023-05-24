@@ -86,6 +86,11 @@ public class ScannerReader {
         Messages.requestIvaOption();
         return SC.nextInt();
     }
+
+    public static String readQuantity(){
+        Messages.requestProductQuantity();
+        return SC.nextLine();
+    }
     ///////////////////////////////////
 
     public static String continueUpdate(String data) {
@@ -129,6 +134,11 @@ public class ScannerReader {
 
     public static String readOptionFromDeleteMenu() {
         Messages.deleteMenu();
+        return removeSpaces(SC.nextLine());
+    }
+
+    public static String readOptionFromToBuy(){
+        Messages.shopMenu();
         return removeSpaces(SC.nextLine());
     }
 

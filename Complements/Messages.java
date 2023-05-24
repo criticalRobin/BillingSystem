@@ -118,7 +118,7 @@ public class Messages {
     // Eligir alguna opcion que no es dentro de un switch
     public static void switchDefaultMessage() {
         System.out.println("=============================="); 
-        System.out.println("La opcion ingresada no es valida");
+        System.out.println("La opcion ingresada no es valida, solo validos numeros");
     }
 
     // Nombre
@@ -236,6 +236,10 @@ public class Messages {
         System.out.println("ID del servicio no valido");
     }
 
+    public static void clientNotExist() {
+        System.out.println("=============================="); 
+        System.out.println("El cliente con esa ID no existe");
+    }
     /////////////////////////////////////////////////
     // Productos
     // Producto agregado
@@ -269,9 +273,9 @@ public class Messages {
     }
 
     // Unidad de medida
-    public static void requestProductUnit() {
+    public static void requestProductQuantity() {
         System.out.println("=============================="); 
-        System.out.print("Ingrese la unidad de medida: ");
+        System.out.print("Ingrese la cantidad que desea: ");
     }
 
     // IVA
@@ -334,6 +338,14 @@ public class Messages {
         System.out.println("==============================");
         System.out.println("ELIMINAR");
         System.out.println("1.Clientes \n2.Productos \n3.Servicios \n4.Salir");
+        System.out.println("==============================");
+        System.out.print("Ingrese la opcion que desee: ");
+    }
+
+    public static void shopMenu() {
+        System.out.println("==============================");
+        System.out.println("COMPRAR");
+        System.out.println("1.Productos \n2.Servicios");
         System.out.println("==============================");
         System.out.print("Ingrese la opcion que desee: ");
     }

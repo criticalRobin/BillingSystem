@@ -7,7 +7,7 @@ import Complements.Messages;
 import Complements.ScannerReader;
 
 public class ServiceDao {
-    static List<Service> services = new LinkedList<>();
+    public static List<Service> services = new LinkedList<>();
 
     public static boolean registerService(String id, String name, double priceByUnit, double iva) {
         try {

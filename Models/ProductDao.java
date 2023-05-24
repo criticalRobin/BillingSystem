@@ -7,7 +7,7 @@ import Complements.ScannerReader;
 import Complements.Validations;
 
 public class ProductDao {
-    static List<Product> products = new LinkedList<>();
+    public static List<Product> products = new LinkedList<>();
 
     public static boolean registerProduct(String id, String name, double priceByUnit, String uMeasure, double iva) {
         try {

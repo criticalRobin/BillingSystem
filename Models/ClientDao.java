@@ -101,7 +101,7 @@ public class ClientDao {
         String lista = "";
         String support = "";
         for (int i = 0; i < clients.size(); i++) {
-            support = clients.get(i).toString();
+            support = "|"+clients.get(i).toString()+"|\n";
             lista = lista + support;
         }
         return lista;

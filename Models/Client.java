@@ -77,15 +77,6 @@ public class Client {
     }
 
     public String toString() {
-        return this.getId() +"--"+ this.getNames() +" "+ this.getLastnames()+"\n";
+        return this.getId() +"--"+ this.getNames() +" "+ this.getLastnames();
     }
-    /*
-     * public static void main(String[] args) {
-     * Validations test = new Validations();
-     * if (test.validateID("1805472387"))
-     * System.out.println("si es");
-     * else
-     * System.out.println("no es");
-     * }
-     */
 }
