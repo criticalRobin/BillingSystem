@@ -56,7 +56,7 @@ public class BillController {
                                     if (Validations.validateNumbers(String.valueOf(quantity)))
                                         result = true;
                                 } catch (NumberFormatException e) {
-                                    Messages.LimitNumbers();
+                                    Messages.limitNumbers();
                                     result = false;
                                 }
                             } while (!result);
