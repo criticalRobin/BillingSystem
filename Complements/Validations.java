@@ -5,7 +5,7 @@ public class Validations {
     public static boolean validateIDType(String idType) {
         if (!idType.matches("^[12]$")) {
             // mensaje de ID no es valido
-            Messages.wrongTypeID();
+            Messages.switchDefaultMessage();
             return false;
         }
         return true;
@@ -267,6 +267,7 @@ public class Validations {
         } while (!result);
         return result;
     }
+
     ////////////////////////////////
     public static boolean validatePriceWhole(String price) {
         if (price.matches("^\\d+$")) {
@@ -299,10 +300,10 @@ public class Validations {
 
     public static boolean compareIDOrRUC(String extent) {
         if (extent.matches("^\\d{10}$")) {
-            return true;}
-	else if (extent.matches("^\\d{13}$")){
-	     return true;}
-         else {
+            return true;
+        } else if (extent.matches("^\\d{13}$")) {
+            return true;
+        } else {
             Messages.limitIDOrRUC();
         }
         return false;
