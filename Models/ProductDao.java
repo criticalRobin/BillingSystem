@@ -13,6 +13,10 @@ public class ProductDao {
 
     public static boolean registerProduct(String id, String name, double priceByUnit, String uMeasure, double iva) {
         try {
+            if (contains(id)){
+                Messages.errorId();
+                return false;
+            }
             products.add(new Product(id, name, priceByUnit, uMeasure, iva));
             return true;
         } catch (NullPointerException ex) {
@@ -75,5 +79,14 @@ public class ProductDao {
             System.out.println("[" + pro.getName() + " - " + pro.getPriceByUnit() + " - " + pro.getIva() + " - "
                     + pro.getId() + "]");
         }
+    }
+
+    private static boolean contains(String id) {
+        for (Product pro : products) {
+            if (pro.getId().equals(id)) {
+            return true;
+            }
+        }
+        return false;
     }
 }
