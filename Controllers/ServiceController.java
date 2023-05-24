@@ -12,7 +12,7 @@ public class ServiceController {
         boolean result = true;
         String id;
         String name;
-        double priceByUnit;
+        double priceByUnit =0;
         double iva;
 
         do {
@@ -34,13 +34,17 @@ public class ServiceController {
         } while (!result);
 
         do {
-            String price = ScannerReader.readProductServicePriceByUnit();
-            if (!Validations.validatePrice(price)) {
-                return false;
-            } else {
-                priceByUnit = Double.parseDouble(price);
-                result = true;
-            }
+            try{
+                priceByUnit = Double.parseDouble(ScannerReader.readProductServicePriceByUnit());
+                if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
+                    result = false;
+                } else {
+    
+                    result = true;
+                }
+                }catch (Exception e){
+                    result = false;
+                }
         } while (!result);
 
         iva = selectIva();
