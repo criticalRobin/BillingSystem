@@ -306,7 +306,7 @@ public class Messages {
 
     public static void limitIDOrRUC() {
         System.out.println("=============================="); 
-        System.out.println("Solo se aceptan 10 numeros"); }
+        System.out.println("Es limite no es el apropiado"); }
 
     public static void errorId() {
         System.out.println("=============================="); 
