@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.util.Locale;
+
 import Complements.Messages;
 import Complements.ScannerReader;
 import Complements.Validations;
@@ -45,7 +47,7 @@ public class ServiceController {
         } while (!result);
 
         iva = selectIva();
-        ServiceDao.registerService(id, name, priceByUnit, iva);
+        ServiceDao.registerService(id.toUpperCase(Locale.ENGLISH), name.toUpperCase(Locale.ENGLISH), priceByUnit, iva);
         Messages.productAdded();
         return result;
     }
