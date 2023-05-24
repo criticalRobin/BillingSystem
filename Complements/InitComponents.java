@@ -17,6 +17,7 @@ public class InitComponents {
         "su casa", "0998366772", "edder@uta.es");
         Product product = new Product("A000", "CAJA DE COLORES", 0.99, "gr", 0);
         Product product2 = new Product("B000", "CAJA DE ESFEROS", 0.99, "gr", 0);
+        Product product3 = new Product("C000", "CARPETA GRANDE", 1.15, "gr", 12);
         Service service = new Service("A000", "AGUA POTABLE", 15.00, 12.0);
         Service service2 = new Service("B000", "INTERNET", 20.00, 12.0);
         ClientDao.clients.add(cli1);
@@ -24,6 +25,7 @@ public class InitComponents {
         ClientDao.clients.add(cli3);
         ProductDao.products.add(product);
         ProductDao.products.add(product2);
+        ProductDao.products.add(product3);
         ServiceDao.services.add(service);
         ServiceDao.services.add(service2);
     }

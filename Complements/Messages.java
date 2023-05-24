@@ -385,5 +385,19 @@ public class Messages {
         System.out.println("La ID ya esta registrada");
     }
 
+    public static void emptyProduct() {
+        System.out.println("=============================="); 
+        System.out.println("La lista de productos esta vacia");
+    }
+
+    public static void emptyService() {
+        System.out.println("=============================="); 
+        System.out.println("La lista de servicios esta vacia");
+    }
+
+    public static void emptyClients() {
+        System.out.println("=============================="); 
+        System.out.println("La lista de clientes esta vacia");
+    }
 
 }
