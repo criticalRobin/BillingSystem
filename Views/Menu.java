@@ -55,7 +55,7 @@ public class Menu {
                         if (Validations.endProgram()) {
                             result = false;
                             System.out.println("==============================");
-                            System.out.println("Byeeee");
+                            Messages.farewellMessage();
                         }
                         break;
                     default:
