@@ -15,10 +15,10 @@ public class InitComponents {
         "mi casa", "0998366771", "hcortez@uta.edu.ec");
         Client cli3 = new Client("EDDER", "NARANJO", "1805465489001", "2",
         "su casa", "0998366772", "edder@uta.es");
-        Product product = new Product("A", "CAJA DE COLORES", 0.99, "gr", 0);
-        Product product2 = new Product("B", "CAJA DE ESFEROS", 0.99, "gr", 0);
-        Service service = new Service("A", "AGUA POTABLE", 15.00, 12.0);
-        Service service2 = new Service("B", "INTERNET", 20.00, 12.0);
+        Product product = new Product("A000", "CAJA DE COLORES", 0.99, "gr", 0);
+        Product product2 = new Product("B000", "CAJA DE ESFEROS", 0.99, "gr", 0);
+        Service service = new Service("A000", "AGUA POTABLE", 15.00, 12.0);
+        Service service2 = new Service("B000", "INTERNET", 20.00, 12.0);
         ClientDao.clients.add(cli1);
         ClientDao.clients.add(cli2);
         ClientDao.clients.add(cli3);
