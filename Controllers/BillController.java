@@ -35,10 +35,11 @@ public class BillController {
         return null;
     }
 
-    public static boolean toBuy(Bill bill) {  
+    public static boolean toBuy(Bill bill) {
         boolean result = false;
         do {
             String option = ScannerReader.readOptionFromToBuy();
+            int quantity = 0;
             switch (option) {
                 case "1":
                     System.out.println("Productos");
@@ -48,10 +49,17 @@ public class BillController {
                     if (!Validations.validateIdentifier(idP))
                         return false;
                     for (Product pro : ProductDao.products) {
-                        if (pro.getId().equals(idP)) {      
-                            int quantity = Integer.parseInt(ScannerReader.readQuantity());
-                            
-                            bill.addProduct(pro,quantity);
+                        if (pro.getId().equals(idP)) {
+                            do {
+                                try{
+                                    quantity = Integer.parseInt(ScannerReader.readQuantity());
+                                    result =true;
+                                }catch (NumberFormatException e){
+                                    
+                                    result = false;
+                                }
+                            } while (!result);
+                            bill.addProduct(pro, quantity);
                             result = true;
                             break;
                         }
@@ -90,6 +98,5 @@ public class BillController {
         }
         return false;
     }
-
 
 }
