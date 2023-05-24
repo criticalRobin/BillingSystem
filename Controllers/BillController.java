@@ -50,6 +50,7 @@ public class BillController {
                     for (Product pro : ProductDao.products) {
                         if (pro.getId().equals(idP)) {      
                             int quantity = Integer.parseInt(ScannerReader.readQuantity());
+                            
                             bill.addProduct(pro,quantity);
                             result = true;
                             break;
