@@ -8,6 +8,7 @@ import Complements.Validations;
 
 public class ClientDao {
     public static List<Client> clients = new LinkedList<>();
+    
 
     // inserta a un cliente a la lista
     public static boolean insertClient(String names, String lastnames, String id, String typeId, String address,
