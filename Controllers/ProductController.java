@@ -28,19 +28,19 @@ public class ProductController {
             name = ScannerReader.readProductServiceName();
             if (!Validations.validateProductName(name)) {
                 Messages.wrongNameProduct();
-                return false;
+                result = false;
             } else {
                 result = true;
             }
         } while (!result);
 
         do {
-            String price = ScannerReader.readProductServicePriceByUnit();
-            if (!Validations.validatePrice(price)) {
+            priceByUnit = Double.parseDouble(ScannerReader.readProductServicePriceByUnit());
+            if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
                 Messages.wrongPriceProduct();
-                return false;
+                result = false;
             } else {
-                priceByUnit = Double.parseDouble(price);
+               
                 result = true;
             }
         } while (!result);
@@ -49,7 +49,7 @@ public class ProductController {
             uMeasure = ScannerReader.readUmeasure();
             if (!Validations.validateExtent(uMeasure)) {
                 Messages.wrongExtent();
-                return false;
+                result = false;
             } else {
                 result = true;
             }
