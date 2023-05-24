@@ -6,7 +6,7 @@ public class Validations {
         if (!idType.matches("^[12]$")) {
             // mensaje de ID no es valido
             Messages.switchDefaultMessage();
-            return false;
+            return false;          
         }
         return true;
     }
