@@ -12,7 +12,7 @@ public class ProductController {
         boolean result = true;
         String id;
         String name;
-        double priceByUnit=01;
+        double priceByUnit = 01;
         String uMeasure;
         double iva;
 
@@ -35,18 +35,18 @@ public class ProductController {
         } while (!result);
 
         do {
-            try{
-            priceByUnit = Double.parseDouble(ScannerReader.readProductServicePriceByUnit());
-            if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
-                result = false;
-            } else {
+            try {
+                priceByUnit = Double.parseDouble(ScannerReader.readProductServicePriceByUnit());
+                if (!Validations.validatePrice(String.valueOf(priceByUnit))) {
+                    result = false;
+                } else {
 
-                result = true;
-            }
-            }catch (Exception e){
+                    result = true;
+                }
+            } catch (Exception e) {
                 result = false;
             }
-            
+
         } while (!result);
 
         uMeasure = selectUmeasure();
